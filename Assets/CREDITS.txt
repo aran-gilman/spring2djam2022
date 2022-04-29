@@ -1,0 +1,2 @@
+Palette: Lospec 500 (Sprites/lospec500.png)
+Source: https://lospec.com/palette-list/lospec500
