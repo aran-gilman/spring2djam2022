@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 1632539521}
   - component: {fileID: 1632539520}
   - component: {fileID: 1632539519}
+  - component: {fileID: 1632539522}
   m_Layer: 0
   m_Name: Cursor
   m_TagString: Untagged
@@ -374,6 +375,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632539522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632539518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c046131a39748fe4eae09ccae5f779c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rawPos:
+    m_Name: Raw Pos
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: b2d3b650-1087-432e-9ca8-c475b0a6308a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 12dd5dd9-9e7f-4883-b1e6-2f08c27770bd
+      m_Path: <Mouse>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Raw Pos
+      m_Flags: 0
+    m_Flags: 0
+  grid: {fileID: 1487841507}
 --- !u!1 &1706451439
 GameObject:
   m_ObjectHideFlags: 0
