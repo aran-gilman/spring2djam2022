@@ -15,6 +15,7 @@ public class FlowerInput : MonoBehaviour
     public InputAction removeFlower;
 
     public Flower selectedFlower;
+    public bool isSeed;
 
     private void Awake()
     {
@@ -26,7 +27,7 @@ public class FlowerInput : MonoBehaviour
         Vector3Int cell = cursor.GetSelectedCell();
         if (!flowerTilemap.HasTile(cell))
         {
-            flowerState.SetGrowthStage(cell, FlowerState.GrowthStage.Sprout);
+            flowerState.SetGrowthStage(cell, isSeed ? FlowerState.GrowthStage.Seed : FlowerState.GrowthStage.Flower);
             flowerTilemap.SetTile(cell, selectedFlower);
             flowerTilemap.RefreshTile(cell);
         }
