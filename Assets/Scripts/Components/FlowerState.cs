@@ -40,6 +40,7 @@ public class FlowerState : MonoBehaviour
     public void AdvanceAll()
     {
         List<Vector3Int> cellsToCheck = growthStages.Keys.ToList();
+        List<Vector3Int> grownFlowers = new List<Vector3Int>();
         foreach (Vector3Int cell in cellsToCheck)
         {
             GrowthStage stage = growthStages[cell];
@@ -59,9 +60,14 @@ public class FlowerState : MonoBehaviour
                     break;
 
                 case GrowthStage.Flower:
-                    MaybeCreateSeed(cell);
+                    grownFlowers.Add(cell);
                     break;
             }
+        }
+
+        foreach (Vector3Int cell in grownFlowers)
+        {
+            MaybeCreateSeed(cell);
         }
     }
 

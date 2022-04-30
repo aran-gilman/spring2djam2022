@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae0ed8d6029e594e92e8474ad123679, type: 3}
   m_Name: LupinPurple
   m_EditorClassIdentifier: 
-  parentA: {fileID: 11400000, guid: 0697b0d9d3f8da74296213c52d6c40a1, type: 2}
+  parentA: {fileID: 11400000, guid: 7a98717de4d5eea41a7152eae626e7f9, type: 2}
   parentB: {fileID: 11400000, guid: 970e2724a8a65cf4d9b678ecf7d7b5a1, type: 2}
   hybridChild: {fileID: 11400000, guid: d3691cac7306c3340922919e356a4eba, type: 2}
