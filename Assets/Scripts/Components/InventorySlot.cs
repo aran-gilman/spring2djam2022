@@ -24,8 +24,6 @@ public class InventorySlot : MonoBehaviour
     public Flower flower;
     public ItemType itemType;
 
-    public bool isDiscovered;
-
     public void OnClick()
     {
 
@@ -57,10 +55,11 @@ public class InventorySlot : MonoBehaviour
             return;
         }
 
-        image.color = isDiscovered ? Color.white : Color.black;
-        text.gameObject.SetActive(isDiscovered);
+        PlayerState.FlowerInfo flowerInfo = playerState.GetInventoryInfo(flower);
 
-        PlayerState.InventoryInfo flowerInfo = playerState.GetInventoryInfo(flower);
+        image.color = flowerInfo.isDiscovered ? Color.white : Color.black;
+        text.gameObject.SetActive(flowerInfo.isDiscovered);
+
         switch (itemType)
         {
             case ItemType.Flower:

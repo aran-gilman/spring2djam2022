@@ -909,7 +909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5078226555558741219, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5078226557447248325, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_Sprite
@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5078226555558741219, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5078226557447248325, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_Sprite
@@ -1983,7 +1983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5078226555558741219, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5078226557447248325, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_Sprite
@@ -2209,7 +2209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5078226555558741219, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5078226557447248325, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_Sprite
@@ -4024,7 +4024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5078226555558741219, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5078226557447248325, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_Sprite
@@ -10469,39 +10469,51 @@ MonoBehaviour:
   - flower: {fileID: 11400000, guid: cc03753b788bf4c4eb10edddb047bd10, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 1
   - flower: {fileID: 11400000, guid: 8b32abbebc6cabc49b46c0730c548f1e, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 0
   - flower: {fileID: 11400000, guid: f557c457fde38114485c2441ba5080b4, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 0
   - flower: {fileID: 11400000, guid: 0697b0d9d3f8da74296213c52d6c40a1, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 1
   - flower: {fileID: 11400000, guid: de1c915dc601de147b7c73622cbd8c13, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 0
   - flower: {fileID: 11400000, guid: 4203a9e21c5e0454591be597b8ff808c, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 1
   - flower: {fileID: 11400000, guid: 970e2724a8a65cf4d9b678ecf7d7b5a1, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 1
   - flower: {fileID: 11400000, guid: 36de8f588d4178644b41f900b56abd81, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 0
   - flower: {fileID: 11400000, guid: d3691cac7306c3340922919e356a4eba, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 0
   - flower: {fileID: 11400000, guid: 7a98717de4d5eea41a7152eae626e7f9, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 1
   - flower: {fileID: 11400000, guid: 4e7c42a5a31ae3e4da75421c587379e2, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 0
   - flower: {fileID: 11400000, guid: fb4d88cbbbafdc64aa56900686744a7c, type: 2}
     seedCount: 0
     flowerCount: 0
+    isDiscovered: 1
   baseSeedCost: 5
   playerMoney: 10
 --- !u!4 &2068302485
@@ -10659,15 +10671,6 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  sellFlower:
-    m_Name: Sell Flower
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: d1e402d7-0e2a-4ae5-b328-7276f851ecd1
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   selectedFlower: {fileID: 11400000, guid: cc03753b788bf4c4eb10edddb047bd10, type: 2}
 --- !u!1001 &2114073775
 PrefabInstance:
@@ -10770,7 +10773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5078226555558741219, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5078226557447248325, guid: f1cd9572dbcc3cd40a06bf60c4c26d18, type: 3}
       propertyPath: m_Sprite
