@@ -19,12 +19,25 @@ public class Flower : TileBase
             Debug.LogError($"Failed to display flower at {position}: Tilemap has no associated FlowerState.");
             return;
         }
+
         FlowerState.GrowthStage stage = flowerstate.GetGrowthStage(position);
-        if (stage == FlowerState.GrowthStage.NoFlower)
+        switch(stage)
         {
-            Debug.LogError($"Failed to display flower at {position}: Growth stage set to 'No Flower'");
-            return;
+            case FlowerState.GrowthStage.NoFlower:
+                Debug.LogError($"Failed to display flower at {position}: Growth stage set to 'No Flower'");
+                break;
+
+            case FlowerState.GrowthStage.Seed:
+                tileData.sprite = seedSprite;
+                break;
+
+            case FlowerState.GrowthStage.Sprout:
+                tileData.sprite = sproutSprite;
+                break;
+
+            case FlowerState.GrowthStage.Flower:
+                tileData.sprite = flowerSprite;
+                break;
         }
-        tileData.sprite = stage == FlowerState.GrowthStage.Sprout ? sproutSprite : flowerSprite;
     }
 }
