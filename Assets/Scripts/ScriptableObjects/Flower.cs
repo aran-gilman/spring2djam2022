@@ -9,6 +9,7 @@ public class Flower : TileBase
     public Sprite sproutSprite;
     public Sprite seedSprite;
     public int valueMultiplier;
+    public bool canBuySeeds;
 
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {

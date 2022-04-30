@@ -17,3 +17,4 @@ MonoBehaviour:
   sproutSprite: {fileID: 21300000, guid: cda108dbfa581a741a245ea446470e48, type: 3}
   seedSprite: {fileID: -5089623308421081650, guid: 5dd9346670691f94ba2990fead5bdbf4, type: 3}
   valueMultiplier: 2
+  canBuySeeds: 1
