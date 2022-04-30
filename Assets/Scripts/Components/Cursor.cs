@@ -25,6 +25,6 @@ public class Cursor : MonoBehaviour
 
     private void Update()
     {
-        transform.position = grid.CellToWorld(GetSelectedCell());
+        transform.position = grid.CellToWorld(GetSelectedCell()) + new Vector3(0.5f, 0.5f, 0);
     }
 }

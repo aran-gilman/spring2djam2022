@@ -1,7 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-[RequireComponent(typeof(Tilemap))]
 public class FlowerState : MonoBehaviour
 {
     public enum GrowthStage
@@ -11,15 +10,26 @@ public class FlowerState : MonoBehaviour
         Grown
     }
 
-    public GrowthStage GetGrowthStage(Vector3Int cell) => growthStages[cell.x, cell.y];
-    public void SetGrowthStage(Vector3Int cell, GrowthStage stage) => growthStages[cell.x, cell.y] = stage;
-
-    private GrowthStage[,] growthStages;
-    private Tilemap tilemap;
-
-    private void Awake()
+    public GrowthStage GetGrowthStage(Vector3Int cell)
     {
-        tilemap = GetComponent<Tilemap>();
-        growthStages = new GrowthStage[tilemap.size.x, tilemap.size.y];
+        if (!growthStages.ContainsKey(cell))
+        {
+            growthStages.Add(cell, GrowthStage.NoFlower);
+        }
+        return growthStages[cell];
     }
+    public void SetGrowthStage(Vector3Int cell, GrowthStage stage)
+    {
+        if (growthStages.ContainsKey(cell))
+        {
+            growthStages[cell] = stage;
+        }
+        else
+        {
+            growthStages.Add(cell, stage);
+        }
+    }
+
+    private Dictionary<Vector3Int, GrowthStage> growthStages = new Dictionary<Vector3Int, GrowthStage>();
+
 }
