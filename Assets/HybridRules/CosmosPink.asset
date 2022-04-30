@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae0ed8d6029e594e92e8474ad123679, type: 3}
+  m_Name: CosmosPink
+  m_EditorClassIdentifier: 
+  parentA: {fileID: 11400000, guid: 0697b0d9d3f8da74296213c52d6c40a1, type: 2}
+  parentB: {fileID: 11400000, guid: de1c915dc601de147b7c73622cbd8c13, type: 2}
+  hybridChild: {fileID: 11400000, guid: 8b32abbebc6cabc49b46c0730c548f1e, type: 2}

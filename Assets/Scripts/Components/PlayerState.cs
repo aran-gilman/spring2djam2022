@@ -18,12 +18,14 @@ public class PlayerState : MonoBehaviour
         Sell
     }
 
-    public List<FlowerInfo> inventory = new List<FlowerInfo>();
     public int baseSeedCost = 5;
     public int baseFlowerPrice = 10;
+    public float flowerSeedChance = 0.25f;
+    public float flowerHybridChance = 0.2f;
+
+    public List<FlowerInfo> inventory = new List<FlowerInfo>();
     public int playerMoney = 10;
     public Mode mode;
-
     public Flower selectedFlower;
     public bool isSeed;
 

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae0ed8d6029e594e92e8474ad123679, type: 3}
+  m_Name: CosmosPurple
+  m_EditorClassIdentifier: 
+  parentA: {fileID: 11400000, guid: cc03753b788bf4c4eb10edddb047bd10, type: 2}
+  parentB: {fileID: 11400000, guid: 0697b0d9d3f8da74296213c52d6c40a1, type: 2}
+  hybridChild: {fileID: 11400000, guid: f557c457fde38114485c2441ba5080b4, type: 2}

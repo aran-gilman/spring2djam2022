@@ -4379,6 +4379,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1706451442}
+  hybridRules:
+  - {fileID: 11400000, guid: 84620702f9d177c45b3014caff9d6a7b, type: 2}
+  - {fileID: 11400000, guid: 1823678f9e4e12147a4e9c5895fef12e, type: 2}
+  - {fileID: 11400000, guid: ad6f2d3fe699d7e4f82667b1c8120f44, type: 2}
+  - {fileID: 11400000, guid: 5594dfeeb9a127b4e944b7a1490541d0, type: 2}
+  - {fileID: 11400000, guid: 2c56937a922ca2c448974451c9c16580, type: 2}
+  - {fileID: 11400000, guid: eb92342ba0e5d4f43a32c4481f92b97c, type: 2}
 --- !u!1 &1765397826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4536,7 +4543,6 @@ MonoBehaviour:
   buttonText: {fileID: 224858589}
   placeBackgroundSprite: {fileID: -1198477067713850731, guid: 03d8e19a1b73a9e4eb1884705146d91f, type: 3}
   sellBackgroundSprite: {fileID: -3732398871244758080, guid: 03d8e19a1b73a9e4eb1884705146d91f, type: 3}
-  mode: 0
 --- !u!114 &1784116683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10646,6 +10652,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896756055698a944cad0c4a6423b7253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseSeedCost: 5
+  baseFlowerPrice: 10
+  flowerSeedChance: 0.25
+  flowerHybridChance: 0.2
   inventory:
   - flower: {fileID: 11400000, guid: cc03753b788bf4c4eb10edddb047bd10, type: 2}
     seedCount: 0
@@ -10695,8 +10705,8 @@ MonoBehaviour:
     seedCount: 0
     flowerCount: 0
     isDiscovered: 1
-  baseSeedCost: 5
   playerMoney: 10
+  mode: 0
   selectedFlower: {fileID: 0}
   isSeed: 0
 --- !u!4 &2068302485

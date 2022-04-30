@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae0ed8d6029e594e92e8474ad123679, type: 3}
+  m_Name: LupinPink
+  m_EditorClassIdentifier: 
+  parentA: {fileID: 11400000, guid: 7a98717de4d5eea41a7152eae626e7f9, type: 2}
+  parentB: {fileID: 11400000, guid: 4e7c42a5a31ae3e4da75421c587379e2, type: 2}
+  hybridChild: {fileID: 11400000, guid: 36de8f588d4178644b41f900b56abd81, type: 2}

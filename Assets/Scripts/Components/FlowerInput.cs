@@ -68,19 +68,22 @@ public class FlowerInput : MonoBehaviour
     private void OnRemoveFlower()
     {
         Vector3Int cell = cursor.GetSelectedCell();
-        if (!flowerTilemap.HasTile(cell))
+        Flower removedFlower = flowerTilemap.GetTile<Flower>(cell);
+        if (removedFlower == null)
         {
             return;
         }
         FlowerState.GrowthStage stage = flowerState.GetGrowthStage(cell);
+        PlayerState.FlowerInfo info = playerState.GetInventoryInfo(removedFlower);
         if (stage == FlowerState.GrowthStage.Seed)
         {
-            playerState.GetInventoryInfo(playerState.selectedFlower).seedCount += 1;
+            info.seedCount += 1;
         }
         else if (stage == FlowerState.GrowthStage.Flower)
         {
-            playerState.GetInventoryInfo(playerState.selectedFlower).flowerCount += 1;
+            info.flowerCount += 1;
         }
+        info.isDiscovered = true;
         flowerState.SetGrowthStage(cell, FlowerState.GrowthStage.NoFlower);
         flowerTilemap.SetTile(cell, null);
         flowerTilemap.RefreshTile(cell);
