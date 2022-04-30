@@ -26,7 +26,12 @@ public class InventorySlot : MonoBehaviour
 
     public void OnClick()
     {
-
+        if (!playerState.GetInventoryInfo(flower).isDiscovered)
+        {
+            return;
+        }
+        playerState.selectedFlower = flower;
+        playerState.isSeed = itemType == ItemType.Seed;
     }
 
     private PlayerState playerState;
@@ -36,12 +41,10 @@ public class InventorySlot : MonoBehaviour
         UpdateDisplay();
     }
 
-#if UNITY_EDITOR
     private void Update()
     {
         UpdateDisplay();
     }
-#endif
 
     private void UpdateDisplay()
     {

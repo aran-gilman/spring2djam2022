@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -14,23 +13,77 @@ public class FlowerInput : MonoBehaviour
     public InputAction placeFlower;
     public InputAction removeFlower;
 
-    public Flower selectedFlower;
-    public bool isSeed;
+    private PlayerState playerState;
 
     private void Awake()
     {
         placeFlower.performed += ctx => OnPlaceFlower();
+        removeFlower.performed += ctx => OnRemoveFlower();
+
+        playerState = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerState>();
     }
 
     private void OnPlaceFlower()
     {
+        if (playerState.selectedFlower == null)
+        {
+            return;
+        }
+
+        Vector3Int cell = cursor.GetSelectedCell();
+        if (flowerTilemap.HasTile(cell))
+        {
+            return;
+        }
+
+        PlayerState.FlowerInfo info = playerState.GetInventoryInfo(playerState.selectedFlower);
+        if (playerState.isSeed)
+        {
+            if (info.seedCount > 0)
+            {
+                info.seedCount -= 1;
+            }
+            else if (playerState.selectedFlower.canBuySeeds && playerState.playerMoney >= playerState.GetSeedCost(playerState.selectedFlower))
+            {
+                playerState.playerMoney -= playerState.GetSeedCost(playerState.selectedFlower);
+            }
+            else
+            {
+                return;
+            }
+        }
+        else if (info.flowerCount > 0)
+        {
+            info.flowerCount -= 1;
+        }
+        else
+        {
+            return;
+        }
+        flowerState.SetGrowthStage(cell, playerState.isSeed ? FlowerState.GrowthStage.Seed : FlowerState.GrowthStage.Flower);
+        flowerTilemap.SetTile(cell, playerState.selectedFlower);
+        flowerTilemap.RefreshTile(cell);
+    }
+
+    private void OnRemoveFlower()
+    {
         Vector3Int cell = cursor.GetSelectedCell();
         if (!flowerTilemap.HasTile(cell))
         {
-            flowerState.SetGrowthStage(cell, isSeed ? FlowerState.GrowthStage.Seed : FlowerState.GrowthStage.Flower);
-            flowerTilemap.SetTile(cell, selectedFlower);
-            flowerTilemap.RefreshTile(cell);
+            return;
         }
+        FlowerState.GrowthStage stage = flowerState.GetGrowthStage(cell);
+        if (stage == FlowerState.GrowthStage.Seed)
+        {
+            playerState.GetInventoryInfo(playerState.selectedFlower).seedCount += 1;
+        }
+        else if (stage == FlowerState.GrowthStage.Flower)
+        {
+            playerState.GetInventoryInfo(playerState.selectedFlower).flowerCount += 1;
+        }
+        flowerState.SetGrowthStage(cell, FlowerState.GrowthStage.NoFlower);
+        flowerTilemap.SetTile(cell, null);
+        flowerTilemap.RefreshTile(cell);
     }
 
     private void OnEnable()
@@ -47,12 +100,12 @@ public class FlowerInput : MonoBehaviour
 
     private void Update()
     {
-        if (selectedFlower == null)
+        if (playerState.selectedFlower == null)
         {
             selectedFlowerDisplay.sprite = null;
             return;
         }
-        selectedFlowerDisplay.sprite = selectedFlower.flowerSprite;
+        selectedFlowerDisplay.sprite = playerState.selectedFlower.flowerSprite;
 
         // Prevent "clicking through" the UI
         if (EventSystem.current.IsPointerOverGameObject())

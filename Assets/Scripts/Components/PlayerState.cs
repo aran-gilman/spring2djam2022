@@ -17,5 +17,10 @@ public class PlayerState : MonoBehaviour
     public int baseSeedCost = 5;
     public int playerMoney = 10;
 
+    public Flower selectedFlower;
+    public bool isSeed;
+
     public FlowerInfo GetInventoryInfo(Flower flower) => inventory.Find(it => it.flower == flower);
+
+    public int GetSeedCost(Flower flower) => flower.valueMultiplier * baseSeedCost;
 }
