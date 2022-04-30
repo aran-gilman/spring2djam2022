@@ -6,6 +6,13 @@ public class Cursor : MonoBehaviour
     public InputAction rawPos;
     public Grid grid;
 
+    public Vector3Int GetSelectedCell()
+    {
+        Vector2 mpos = rawPos.ReadValue<Vector2>();
+        Vector3 worldpos = Camera.main.ScreenToWorldPoint(mpos) + new Vector3(0.5f, 0.5f, 0);
+        return grid.WorldToCell(worldpos);
+    }
+
     private void OnEnable()
     {
         rawPos.Enable();
@@ -18,9 +25,6 @@ public class Cursor : MonoBehaviour
 
     private void Update()
     {
-        Vector2 mpos = rawPos.ReadValue<Vector2>();
-        Vector3 worldpos = Camera.main.ScreenToWorldPoint(mpos) + new Vector3(0.5f, 0.5f, 0) ;
-        Vector3Int cellpos = grid.WorldToCell(worldpos);
-        transform.position = grid.CellToWorld(cellpos);
+        transform.position = grid.CellToWorld(GetSelectedCell());
     }
 }

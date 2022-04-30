@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4ad2a106af69f444dbe1d975514736e5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - flowerSprite: {instanceID: 0}
+  - sproutSprite: {fileID: 21300000, guid: cda108dbfa581a741a245ea446470e48, type: 3}
+  - seedSprite: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
