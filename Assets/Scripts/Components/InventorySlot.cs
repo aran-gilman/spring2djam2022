@@ -18,6 +18,7 @@ public class InventorySlot : MonoBehaviour
         Cost
     }
 
+
     public Image image;
     public Text text;
 
@@ -30,16 +31,23 @@ public class InventorySlot : MonoBehaviour
         {
             return;
         }
-        playerState.selectedFlower = flower;
-        playerState.isSeed = itemType == ItemType.Seed;
+
+        if (itemType == ItemType.Seed || playerState.mode == PlayerState.Mode.Place)
+        {
+            playerState.selectedFlower = flower;
+            playerState.isSeed = itemType == ItemType.Seed;
+            return;
+        }
+
+        PlayerState.FlowerInfo info = playerState.GetInventoryInfo(flower);
+        if (info.flowerCount > 0)
+        {
+            info.flowerCount -= 1;
+            playerState.playerMoney += flower.valueMultiplier * playerState.baseFlowerPrice;
+        }
     }
 
     private PlayerState playerState;
-
-    private void OnEnable()
-    {
-        UpdateDisplay();
-    }
 
     private void Update()
     {

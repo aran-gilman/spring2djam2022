@@ -12,10 +12,17 @@ public class PlayerState : MonoBehaviour
         public int flowerCount;
         public bool isDiscovered;
     }
+    public enum Mode
+    {
+        Place,
+        Sell
+    }
 
     public List<FlowerInfo> inventory = new List<FlowerInfo>();
     public int baseSeedCost = 5;
+    public int baseFlowerPrice = 10;
     public int playerMoney = 10;
+    public Mode mode;
 
     public Flower selectedFlower;
     public bool isSeed;
