@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
@@ -12,7 +13,6 @@ public class FlowerInput : MonoBehaviour
 
     public InputAction placeFlower;
     public InputAction removeFlower;
-    public InputAction sellFlower;
 
     public Flower selectedFlower;
 
@@ -36,14 +36,12 @@ public class FlowerInput : MonoBehaviour
     {
         placeFlower.Enable();
         removeFlower.Enable();
-        sellFlower.Enable();
     }
 
     private void OnDisable()
     {
         placeFlower.Disable();
         removeFlower.Disable();
-        sellFlower.Disable();
     }
 
     private void Update()
@@ -54,5 +52,17 @@ public class FlowerInput : MonoBehaviour
             return;
         }
         selectedFlowerDisplay.sprite = selectedFlower.flowerSprite;
+
+        // Prevent "clicking through" the UI
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            placeFlower.Disable();
+            removeFlower.Disable();
+        }
+        else
+        {
+            placeFlower.Enable();
+            removeFlower.Enable();
+        }
     }
 }
