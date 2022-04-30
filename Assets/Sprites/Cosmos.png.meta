@@ -4,22 +4,22 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -1151081352061276800
-    second: Cosmos_White
-  - first:
-      213: -8126095258537033029
     second: Cosmos_Purple
   - first:
-      213: 3587044724113903387
+      213: -8126095258537033029
     second: Cosmos_Pink
   - first:
+      213: 3587044724113903387
+    second: Cosmos_White
+  - first:
       213: -8447952413419979907
-    second: Cosmos_Blue
+    second: Cosmos_Purple
   - first:
       213: -4929224353871919601
-    second: Cosmos_Red
+    second: Cosmos_Pink
   - first:
       213: 9190031048493673653
-    second: Cosmos_Yellow
+    second: Cosmos_White
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cosmos_White
+      name: Cosmos_Blue
       rect:
         serializedVersion: 2
         x: 0
@@ -142,7 +142,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cosmos_Purple
+      name: Cosmos_Red
       rect:
         serializedVersion: 2
         x: 16
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cosmos_Pink
+      name: Cosmos_Yellow
       rect:
         serializedVersion: 2
         x: 32
@@ -184,7 +184,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cosmos_Blue
+      name: Cosmos_Purple
       rect:
         serializedVersion: 2
         x: 0
@@ -205,7 +205,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cosmos_Red
+      name: Cosmos_Pink
       rect:
         serializedVersion: 2
         x: 16
@@ -226,7 +226,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cosmos_Yellow
+      name: Cosmos_White
       rect:
         serializedVersion: 2
         x: 32

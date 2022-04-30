@@ -1,40 +1,43 @@
 fileFormatVersion: 2
-guid: d021e7fce0264b2419f64788bdc32557
+guid: 5dd9346670691f94ba2990fead5bdbf4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8484328041314407699
-    second: Lupin_Pink
+      213: 8558203965515749781
+    second: Seeds_Cosmos_Blue
   - first:
-      213: -7487396761622080222
-    second: Lupin_Pink
+      213: 1131535281375055967
+    second: Seeds_Cosmos_Red
   - first:
-      213: 6673163975840141200
-    second: Lupin_White
+      213: -5925890003656416073
+    second: Seeds_Cosmos_Yellow
   - first:
-      213: -6453030019584514275
-    second: Lupin_Purple
+      213: -3901715911805076996
+    second: Seeds_Cosmos_Purple
   - first:
-      213: -6167839971644123453
-    second: Lupin_Pink
+      213: 2514004559234900711
+    second: Seeds_Cosmos_Pink
   - first:
-      213: 5005193871409777850
-    second: Lupin_White
+      213: 3719439311941371724
+    second: Seeds_Cosmos_White
   - first:
-      213: -4901929593454713770
-    second: Lupin_6
+      213: 3507544636904330049
+    second: Seeds_Lupin_Blue
   - first:
-      213: 6667961515264457056
-    second: Lupin_7
+      213: -5089623308421081650
+    second: Seeds_Lupin_Red
   - first:
-      213: 2980791791534261073
-    second: Lupin_8
+      213: -6416847606190536800
+    second: Seeds_Lupin_Yellow
   - first:
-      213: -4740673561241908593
-    second: Lupin_9
+      213: -6266224706370420965
+    second: Seeds_Lupin_Purple
   - first:
-      213: -3542065269333686282
-    second: Lupin_10
+      213: -1633848273674055570
+    second: Seeds_Lupin_Pink
+  - first:
+      213: 4955485167201965654
+    second: Seeds_Lupin_White
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,7 +139,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lupin_Blue
+      name: Seeds_Cosmos_Blue
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599d7efc929d4c670800000000000000
+      internalID: 8558203965515749781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seeds_Cosmos_Red
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f509e21e75504bf00800000000000000
+      internalID: 1131535281375055967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seeds_Cosmos_Yellow
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4650a307203cda0800000000000000
+      internalID: -5925890003656416073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seeds_Cosmos_Purple
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf97e56ec025ad9c0800000000000000
+      internalID: -3901715911805076996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seeds_Cosmos_Pink
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2a8eca3d983e220800000000000000
+      internalID: 2514004559234900711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seeds_Cosmos_White
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4783e7095a1e9330800000000000000
+      internalID: 3719439311941371724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seeds_Lupin_Blue
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3155e64d6636eb570800000000000000
-      internalID: 8484328041314407699
+      spriteID: 1435284734d4da030800000000000000
+      internalID: 3507544636904330049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lupin_Red
+      name: Seeds_Lupin_Red
       rect:
         serializedVersion: 2
         x: 16
@@ -171,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2251b13b05c671890800000000000000
-      internalID: -7487396761622080222
+      spriteID: ec5530521960e59b0800000000000000
+      internalID: -5089623308421081650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lupin_Yellow
+      name: Seeds_Lupin_Yellow
       rect:
         serializedVersion: 2
         x: 32
@@ -192,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09f82e3b747db9c50800000000000000
-      internalID: 6673163975840141200
+      spriteID: 0a7823f9917c2f6a0800000000000000
+      internalID: -6416847606190536800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lupin_Purple
+      name: Seeds_Lupin_Purple
       rect:
         serializedVersion: 2
         x: 0
@@ -213,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d17abb5036b3276a0800000000000000
-      internalID: -6453030019584514275
+      spriteID: b1fb30654d5e909a0800000000000000
+      internalID: -6266224706370420965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lupin_Pink
+      name: Seeds_Lupin_Pink
       rect:
         serializedVersion: 2
         x: 16
@@ -234,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c652b2793e676aa0800000000000000
-      internalID: -6167839971644123453
+      spriteID: e60d5cec6a76359e0800000000000000
+      internalID: -1633848273674055570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lupin_White
+      name: Seeds_Lupin_White
       rect:
         serializedVersion: 2
         x: 32
@@ -255,8 +384,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abc8751be45067540800000000000000
-      internalID: 5005193871409777850
+      spriteID: 6565ac8118b65c440800000000000000
+      internalID: 4955485167201965654
       vertices: []
       indices: 
       edges: []
