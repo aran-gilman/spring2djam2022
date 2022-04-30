@@ -1,40 +1,16 @@
 fileFormatVersion: 2
-guid: d021e7fce0264b2419f64788bdc32557
+guid: cf8623d518fa2394fa0a8ad8a50e2660
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8484328041314407699
-    second: Lupin_White
+      213: -1347532211411968617
+    second: Grass_0
   - first:
-      213: -7487396761622080222
-    second: Lupin_Blue
+      213: -7645372005702169758
+    second: Grass_1
   - first:
-      213: 6673163975840141200
-    second: Lupin_Purple
-  - first:
-      213: -6453030019584514275
-    second: Lupin_Pink
-  - first:
-      213: -6167839971644123453
-    second: Lupin_Red
-  - first:
-      213: 5005193871409777850
-    second: Lupin_Yellow
-  - first:
-      213: -4901929593454713770
-    second: Lupin_6
-  - first:
-      213: 6667961515264457056
-    second: Lupin_7
-  - first:
-      213: 2980791791534261073
-    second: Lupin_8
-  - first:
-      213: -4740673561241908593
-    second: Lupin_9
-  - first:
-      213: -3542065269333686282
-    second: Lupin_10
+      213: 6891631753638271631
+    second: Grass_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lupin_White
+      name: Grass_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,20 +120,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3155e64d6636eb570800000000000000
-      internalID: 8484328041314407699
+      spriteID: 79d946fd79a9c4de0800000000000000
+      internalID: -1347532211411968617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lupin_Blue
+      name: Grass_1
       rect:
         serializedVersion: 2
         x: 16
@@ -165,41 +141,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2251b13b05c671890800000000000000
-      internalID: -7487396761622080222
+      spriteID: 26b0860faae26e590800000000000000
+      internalID: -7645372005702169758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lupin_Purple
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09f82e3b747db9c50800000000000000
-      internalID: 6673163975840141200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lupin_Pink
+      name: Grass_2
       rect:
         serializedVersion: 2
         x: 0
@@ -207,56 +162,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d17abb5036b3276a0800000000000000
-      internalID: -6453030019584514275
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lupin_Red
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c652b2793e676aa0800000000000000
-      internalID: -6167839971644123453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lupin_Yellow
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abc8751be45067540800000000000000
-      internalID: 5005193871409777850
+      spriteID: f8a5966019ef3af50800000000000000
+      internalID: 6891631753638271631
       vertices: []
       indices: 
       edges: []
