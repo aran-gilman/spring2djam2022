@@ -100,13 +100,6 @@ public class FlowerInput : MonoBehaviour
 
     private void Update()
     {
-        if (playerState.selectedFlower == null)
-        {
-            selectedFlowerDisplay.sprite = null;
-            return;
-        }
-        selectedFlowerDisplay.sprite = playerState.selectedFlower.flowerSprite;
-
         // Prevent "clicking through" the UI
         if (EventSystem.current.IsPointerOverGameObject())
         {
@@ -118,5 +111,13 @@ public class FlowerInput : MonoBehaviour
             placeFlower.Enable();
             removeFlower.Enable();
         }
+
+        if (playerState.selectedFlower == null)
+        {
+            selectedFlowerDisplay.sprite = null;
+            return;
+        }
+        selectedFlowerDisplay.sprite = playerState.isSeed ? playerState.selectedFlower.seedSprite : playerState.selectedFlower.flowerSprite;
+
     }
 }
