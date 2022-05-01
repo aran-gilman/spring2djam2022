@@ -1,0 +1,27 @@
+{
+	"credits": [
+		{
+			"file": "Sprites/lospec500.png",
+			"link": "https://lospec.com/palette-list/lospec500",
+			"name": "Lospec 500 Palette",
+			"type": "Palette"
+		},
+		{
+			"type": "Music",
+			"name": "Nature theme sketch",
+			"file": "Music/nature_sketch.wav",
+			"author": "remaxim",
+			"license": "CC-BY-SA 3.0",
+			"licenseLink": "https://creativecommons.org/licenses/by-sa/3.0/",
+			"link": "https://opengameart.org/content/nature-theme-sketch"
+		},
+		{
+			"type": "Fonts",
+			"file": "Fonts/*.ttf",
+			"author": "Kenney Vleugels",
+			"authorLink": "www.kenney.nl",
+			"license": "Public Domain",
+			"link": "https://opengameart.org/content/kenney-fonts"
+		}
+	]
+}
