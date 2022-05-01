@@ -541,7 +541,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1719,7 +1719,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3283,7 +3283,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5532,7 +5532,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5688,6 +5688,7 @@ MonoBehaviour:
   maxFlowerTypesHard: 7
   minQuantity: 1
   maxQuantity: 9
+  orderValueMultiplier: 1.5
   unlockMediumAfterCompleting: 3
   unlockHardAfterCompleting: 10
   completedOrders: 0
@@ -10001,10 +10002,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSeedCost: 5
   baseFlowerPrice: 10
-  flowerSeedChance: 0.25
-  flowerHybridChance: 0.2
-  debtMultiplier: 2
-  daysBetweenPayments: 7
+  flowerSeedChance: 0.1
+  flowerHybridChance: 0.5
+  debtMultiplier: 3
+  daysBetweenPayments: 3
   inventory:
   - flower: {fileID: 11400000, guid: cc03753b788bf4c4eb10edddb047bd10, type: 2}
     seedCount: 0
@@ -10055,8 +10056,8 @@ MonoBehaviour:
     flowerCount: 0
     isDiscovered: 1
   playerMoney: 10
-  amountDue: 50
-  daysRemaining: 5
+  amountDue: 25
+  daysRemaining: 3
   mode: 0
   selectedFlower: {fileID: 0}
   isSeed: 0
@@ -10474,7 +10475,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

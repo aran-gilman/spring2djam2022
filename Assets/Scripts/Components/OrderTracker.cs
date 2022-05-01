@@ -25,6 +25,7 @@ public class OrderTracker : MonoBehaviour
     public int maxFlowerTypesHard = 7;
     public int minQuantity = 1;
     public int maxQuantity = 9;
+    public float orderValueMultiplier = 1.5f;
 
     public int unlockMediumAfterCompleting = 3;
     public int unlockHardAfterCompleting = 10;
@@ -37,7 +38,7 @@ public class OrderTracker : MonoBehaviour
         {
             PlayerState.FlowerInfo info = playerState.GetInventoryInfo(item.flower);
             info.flowerCount -= item.quantity;
-            playerState.playerMoney += playerState.baseFlowerPrice * info.flower.valueMultiplier * 2;
+            playerState.playerMoney += (int)(playerState.baseFlowerPrice * info.flower.valueMultiplier * orderValueMultiplier);
         }
         completedOrders++;
         requestedItems.Clear();
@@ -110,7 +111,7 @@ public class OrderTracker : MonoBehaviour
             .Select(f => new RequestedItem()
             {
                 flower = f,
-                quantity = UnityEngine.Random.Range(minQuantity, minQuantity + 1)
+                quantity = UnityEngine.Random.Range(minQuantity, maxQuantity + 1)
             })
             .ToList();
 

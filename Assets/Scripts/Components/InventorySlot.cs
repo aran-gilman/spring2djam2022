@@ -21,6 +21,7 @@ public class InventorySlot : MonoBehaviour
 
     public Image image;
     public Text text;
+    public Button button;
 
     public Flower flower;
     public ItemType itemType;
@@ -76,6 +77,7 @@ public class InventorySlot : MonoBehaviour
             case ItemType.Flower:
                 image.sprite = flower.flowerSprite;
                 text.text = $"{flowerInfo.flowerCount}";
+                button.interactable = flowerInfo.flowerCount > 0;
                 break;
 
             case ItemType.Seed:
@@ -83,10 +85,12 @@ public class InventorySlot : MonoBehaviour
                 if (flowerInfo.seedCount == 0 && flower.canBuySeeds)
                 {
                     text.text = $"{playerState.baseSeedCost * flower.valueMultiplier}G";
+                    button.interactable = true;
                 }
                 else
                 {
                     text.text = $"{flowerInfo.seedCount}";
+                    button.interactable = flowerInfo.seedCount > 0;
                 }
                 break;
         }
