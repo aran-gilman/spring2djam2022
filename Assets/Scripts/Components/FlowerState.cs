@@ -47,12 +47,6 @@ public class FlowerState : MonoBehaviour
 
             switch (stage)
             {
-                case GrowthStage.Seed:
-
-                    growthStages[cell] = GrowthStage.Sprout;
-                    tilemap.RefreshTile(cell);
-                    break;
-
                 case GrowthStage.Sprout:
 
                     growthStages[cell] = GrowthStage.Flower;

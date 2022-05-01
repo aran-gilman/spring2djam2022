@@ -60,7 +60,7 @@ public class FlowerInput : MonoBehaviour
         {
             return;
         }
-        flowerState.SetGrowthStage(cell, playerState.isSeed ? FlowerState.GrowthStage.Seed : FlowerState.GrowthStage.Flower);
+        flowerState.SetGrowthStage(cell, playerState.isSeed ? FlowerState.GrowthStage.Sprout : FlowerState.GrowthStage.Flower);
         flowerTilemap.SetTile(cell, playerState.selectedFlower);
         flowerTilemap.RefreshTile(cell);
     }
@@ -73,7 +73,13 @@ public class FlowerInput : MonoBehaviour
         {
             return;
         }
+
         FlowerState.GrowthStage stage = flowerState.GetGrowthStage(cell);
+        if (stage == FlowerState.GrowthStage.Sprout)
+        {
+            return;
+        }
+
         PlayerState.FlowerInfo info = playerState.GetInventoryInfo(removedFlower);
         if (stage == FlowerState.GrowthStage.Seed)
         {
@@ -84,6 +90,7 @@ public class FlowerInput : MonoBehaviour
             info.flowerCount += 1;
         }
         info.isDiscovered = true;
+
         flowerState.SetGrowthStage(cell, FlowerState.GrowthStage.NoFlower);
         flowerTilemap.SetTile(cell, null);
         flowerTilemap.RefreshTile(cell);
