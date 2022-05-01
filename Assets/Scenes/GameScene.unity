@@ -3768,7 +3768,7 @@ GameObject:
   - component: {fileID: 1211994150}
   - component: {fileID: 1211994149}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CompletedOrdersDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5583,6 +5583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderSlotPrefab: {fileID: 6257480845501949673, guid: 6a2b93acca4229148b891c5285845b12, type: 3}
   submitButton: {fileID: 54769928}
+  completedOrdersDisplay: {fileID: 1211994149}
   easyFlowers:
   - {fileID: 11400000, guid: cc03753b788bf4c4eb10edddb047bd10, type: 2}
   - {fileID: 11400000, guid: 0697b0d9d3f8da74296213c52d6c40a1, type: 2}
@@ -5604,7 +5605,7 @@ MonoBehaviour:
   maxFlowerTypesHard: 7
   minQuantity: 2
   maxQuantity: 5
-  orderValueMultiplier: 1.5
+  orderValueMultiplier: 5
   unlockMediumAfterCompleting: 3
   unlockHardAfterCompleting: 10
   completedOrders: 0
@@ -9920,8 +9921,6 @@ MonoBehaviour:
   baseFlowerPrice: 10
   flowerSeedChance: 0.1
   flowerHybridChance: 0.5
-  debtMultiplier: 3
-  daysBetweenPayments: 3
   inventory:
   - flower: {fileID: 11400000, guid: cc03753b788bf4c4eb10edddb047bd10, type: 2}
     seedCount: 0
@@ -9972,8 +9971,6 @@ MonoBehaviour:
     flowerCount: 0
     isDiscovered: 1
   playerMoney: 10
-  amountDue: 25
-  daysRemaining: 3
   mode: 0
   selectedFlower: {fileID: 0}
   isSeed: 0
@@ -10308,18 +10305,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1706451443}
         m_TargetAssemblyTypeName: FlowerState, Assembly-CSharp
         m_MethodName: AdvanceAll
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2068302484}
-        m_TargetAssemblyTypeName: PlayerState, Assembly-CSharp
-        m_MethodName: OnSleep
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
