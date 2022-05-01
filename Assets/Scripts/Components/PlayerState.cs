@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerState : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class PlayerState : MonoBehaviour
             playerMoney -= amountDue;
             if (playerMoney < 0)
             {
-                // Game Over
+                SceneManager.LoadScene("TitleScene");
             }
             daysRemaining = daysBetweenPayments;
             amountDue = (int)(amountDue * debtMultiplier);
