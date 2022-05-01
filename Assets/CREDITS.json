@@ -20,8 +20,28 @@
 			"file": "Fonts/*.ttf",
 			"author": "Kenney Vleugels",
 			"authorLink": "www.kenney.nl",
-			"license": "Public Domain",
+			"license": "CC0 (Public Domain)",
 			"link": "https://opengameart.org/content/kenney-fonts"
-		}
+		},
+		{
+			"type": "Sfx",
+			"file": "Audio/Money_*.wav",
+			"author": "Owlish Media",
+			"license": "CC0 (Public Domain)",
+			"link": "https://opengameart.org/content/202-more-sound-effects"
+		},
+		{
+			"type": "Sfx",
+			"file": "Audio/*.ogg (except gravel.ogg and mud02.gg)",
+			"authorLink": "www.kenney.nl",
+			"license": "CC0 (Public Domain)",
+			"link": "https://opengameart.org/content/interface-sounds"
+		},
+		{
+			"type": "Sfx",
+			"file": "Audio/gravel.ogg, mud02.ogg",
+			"author": "TinyWorlds",
+			"license": "CC0",
+			"link": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud"
 	]
 }

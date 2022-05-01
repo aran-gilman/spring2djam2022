@@ -9,8 +9,12 @@ public class FlowerInput : MonoBehaviour
     public SpriteRenderer selectedFlowerDisplay;
     public Tilemap flowerTilemap;
     public FlowerState flowerState;
+    public AudioSource audioSource;
 
     public InputAction interact;
+
+    public AudioClip placeSound;
+    public AudioClip removeSound;
 
     private PlayerState playerState;
 
@@ -64,6 +68,7 @@ public class FlowerInput : MonoBehaviour
         {
             return;
         }
+        audioSource.PlayOneShot(placeSound);
         flowerState.SetGrowthStage(cell, playerState.isSeed ? FlowerState.GrowthStage.Sprout : FlowerState.GrowthStage.Flower);
         flowerTilemap.SetTile(cell, playerState.selectedFlower);
         flowerTilemap.RefreshTile(cell);
@@ -88,6 +93,7 @@ public class FlowerInput : MonoBehaviour
         }
         info.isDiscovered = true;
 
+        audioSource.PlayOneShot(removeSound);
         flowerState.SetGrowthStage(cell, FlowerState.GrowthStage.NoFlower);
         flowerTilemap.SetTile(cell, null);
         flowerTilemap.RefreshTile(cell);
