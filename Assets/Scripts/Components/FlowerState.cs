@@ -13,7 +13,8 @@ public class FlowerState : MonoBehaviour
         Flower
     }
 
-    public Tilemap tilemap;
+    public Tilemap flowerTilemap;
+    public Tilemap backgroundTilemap;
 
     public List<HybridRule> hybridRules = new List<HybridRule>();
 
@@ -36,6 +37,11 @@ public class FlowerState : MonoBehaviour
             growthStages.Add(cell, stage);
         }
     }
+    public bool CanPlantFlowers(Vector3Int cell)
+    {
+        TerrainTile terrain = backgroundTilemap.GetTile<TerrainTile>(cell);
+        return terrain != null && terrain.canPlantFlowers;
+    }
 
     public void AdvanceAll()
     {
@@ -50,7 +56,7 @@ public class FlowerState : MonoBehaviour
                 case GrowthStage.Sprout:
 
                     growthStages[cell] = GrowthStage.Flower;
-                    tilemap.RefreshTile(cell);
+                    flowerTilemap.RefreshTile(cell);
                     break;
 
                 case GrowthStage.Flower:
@@ -95,7 +101,7 @@ public class FlowerState : MonoBehaviour
             return;
         }
 
-        IEnumerable<Vector3Int> adjacentCells = GetAdjacentCells(cell);
+        IEnumerable<Vector3Int> adjacentCells = GetAdjacentCells(cell).Where(CanPlantFlowers);
         List<Flower> adjacentFlowers = new List<Flower>();
         List<Vector3Int> emptyCells = new List<Vector3Int>();
 
@@ -104,7 +110,7 @@ public class FlowerState : MonoBehaviour
             GrowthStage stage = GetGrowthStage(adj);
             if (stage == GrowthStage.Flower)
             {
-                adjacentFlowers.Add(tilemap.GetTile<Flower>(adj));
+                adjacentFlowers.Add(flowerTilemap.GetTile<Flower>(adj));
             }
             else if (stage == GrowthStage.NoFlower)
             {
@@ -117,10 +123,10 @@ public class FlowerState : MonoBehaviour
             return;
         }
 
-        Flower seed = GetSeed(tilemap.GetTile<Flower>(cell), adjacentFlowers.Distinct());
+        Flower seed = GetSeed(flowerTilemap.GetTile<Flower>(cell), adjacentFlowers.Distinct());
         Vector3Int seedCell = emptyCells[Random.Range(0, emptyCells.Count)];
         SetGrowthStage(seedCell, GrowthStage.Seed);
-        tilemap.SetTile(seedCell, seed);
+        flowerTilemap.SetTile(seedCell, seed);
     }
 
     private Flower GetSeed(Flower flower, IEnumerable<Flower> adjacentFlowers)

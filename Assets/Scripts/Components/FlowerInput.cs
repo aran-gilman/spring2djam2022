@@ -23,6 +23,11 @@ public class FlowerInput : MonoBehaviour
     private void OnInteract()
     {
         Vector3Int cell = cursor.GetSelectedCell();
+        if (!flowerState.CanPlantFlowers(cell))
+        {
+            return;
+        }
+
         if (flowerTilemap.HasTile(cell))
         {
             RemoveFlower(cell);
