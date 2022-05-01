@@ -11285,70 +11285,37 @@ MonoBehaviour:
   selectedFlowerDisplay: {fileID: 2074457700}
   flowerTilemap: {fileID: 1706451442}
   flowerState: {fileID: 1706451443}
-  placeFlower:
-    m_Name: Place Flower
+  interact:
+    m_Name: Interact
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 45b01996-ef17-4910-8f1a-ac72618c482f
+    m_Id: 25dbce45-e575-4120-bd64-00d7335255d0
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 2c09fc5e-8c31-46de-a85e-026f90be1b85
+      m_Id: be63cca6-b935-433d-8cee-900eb0e944a1
       m_Path: <Mouse>/leftButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Place Flower
+      m_Action: Interact
       m_Flags: 0
     - m_Name: 
-      m_Id: ca08c3dc-848c-45a2-b592-0899608dbeae
+      m_Id: 610b5acb-4069-4fb8-aa4f-865b9e00c555
       m_Path: <Keyboard>/x
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Place Flower
+      m_Action: Interact
       m_Flags: 0
     - m_Name: 
-      m_Id: 0d8765e7-13f9-400f-9d71-14c148ac9b29
+      m_Id: cdae5c2d-97e2-44bc-bbfb-23655ba1124d
       m_Path: <Keyboard>/enter
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Place Flower
-      m_Flags: 0
-    m_Flags: 0
-  removeFlower:
-    m_Name: Remove Flower
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: b0426fba-6d13-4b32-8cb6-b7d632555db2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 2f450f0d-4d91-4d37-a711-0ce7255f0e0e
-      m_Path: <Mouse>/rightButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Remove Flower
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 92734cae-b710-4fd3-936d-a9ddd92ae6ec
-      m_Path: <Keyboard>/c
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Remove Flower
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 69c7939c-ce8b-4c47-8aa4-7d67946c7fcb
-      m_Path: <Keyboard>/delete
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Remove Flower
+      m_Action: Interact
       m_Flags: 0
     m_Flags: 0
 --- !u!1 &2074457698

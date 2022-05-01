@@ -10,32 +10,31 @@ public class FlowerInput : MonoBehaviour
     public Tilemap flowerTilemap;
     public FlowerState flowerState;
 
-    public InputAction placeFlower;
-    public InputAction removeFlower;
+    public InputAction interact;
 
     private PlayerState playerState;
 
     private void Awake()
     {
-        placeFlower.performed += ctx => OnPlaceFlower();
-        removeFlower.performed += ctx => OnRemoveFlower();
-
         playerState = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerState>();
+        interact.performed += ctx => OnInteract();
     }
 
-    private void OnPlaceFlower()
+    private void OnInteract()
     {
-        if (playerState.selectedFlower == null)
-        {
-            return;
-        }
-
         Vector3Int cell = cursor.GetSelectedCell();
         if (flowerTilemap.HasTile(cell))
         {
-            return;
+            RemoveFlower(cell);
         }
+        else if (playerState.selectedFlower != null)
+        {
+            PlaceFlower(cell);
+        }
+    }
 
+    private void PlaceFlower(Vector3Int cell)
+    {
         PlayerState.FlowerInfo info = playerState.GetInventoryInfo(playerState.selectedFlower);
         if (playerState.isSeed)
         {
@@ -65,22 +64,15 @@ public class FlowerInput : MonoBehaviour
         flowerTilemap.RefreshTile(cell);
     }
 
-    private void OnRemoveFlower()
+    private void RemoveFlower(Vector3Int cell)
     {
-        Vector3Int cell = cursor.GetSelectedCell();
-        Flower removedFlower = flowerTilemap.GetTile<Flower>(cell);
-        if (removedFlower == null)
-        {
-            return;
-        }
-
         FlowerState.GrowthStage stage = flowerState.GetGrowthStage(cell);
         if (stage == FlowerState.GrowthStage.Sprout)
         {
             return;
         }
 
-        PlayerState.FlowerInfo info = playerState.GetInventoryInfo(removedFlower);
+        PlayerState.FlowerInfo info = playerState.GetInventoryInfo(flowerTilemap.GetTile<Flower>(cell));
         if (stage == FlowerState.GrowthStage.Seed)
         {
             info.seedCount += 1;
@@ -98,14 +90,12 @@ public class FlowerInput : MonoBehaviour
 
     private void OnEnable()
     {
-        placeFlower.Enable();
-        removeFlower.Enable();
+        interact.Enable();
     }
 
     private void OnDisable()
     {
-        placeFlower.Disable();
-        removeFlower.Disable();
+        interact.Disable();
     }
 
     private void Update()
@@ -113,13 +103,11 @@ public class FlowerInput : MonoBehaviour
         // Prevent "clicking through" the UI
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            placeFlower.Disable();
-            removeFlower.Disable();
+            interact.Disable();
         }
         else
         {
-            placeFlower.Enable();
-            removeFlower.Enable();
+            interact.Enable();
         }
 
         if (playerState.selectedFlower == null)
