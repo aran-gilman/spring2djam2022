@@ -26,6 +26,7 @@ public class FlowerState : MonoBehaviour
         }
         return growthStages[cell];
     }
+
     public void SetGrowthStage(Vector3Int cell, GrowthStage stage)
     {
         if (growthStages.ContainsKey(cell))
@@ -37,6 +38,7 @@ public class FlowerState : MonoBehaviour
             growthStages.Add(cell, stage);
         }
     }
+
     public bool CanPlantFlowers(Vector3Int cell)
     {
         TerrainTile terrain = backgroundTilemap.GetTile<TerrainTile>(cell);

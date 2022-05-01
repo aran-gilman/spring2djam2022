@@ -3,7 +3,9 @@ using UnityEngine.UI;
 
 public class MoneyDisplay : MonoBehaviour
 {
-    public Text text;
+    public Text playerMoney;
+    public Text amountDue;
+    public Text daysRemaining;
 
     private PlayerState playerState;
 
@@ -14,6 +16,8 @@ public class MoneyDisplay : MonoBehaviour
 
     private void Update()
     {
-        text.text = $"{playerState.playerMoney}G";
+        playerMoney.text = $"{playerState.playerMoney}G";
+        amountDue.text = $"Due:\n{playerState.amountDue}G";
+        daysRemaining.text = $"{playerState.daysRemaining} Days";
     }
 }
