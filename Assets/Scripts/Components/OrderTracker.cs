@@ -15,6 +15,7 @@ public class OrderTracker : MonoBehaviour
 
     public GameObject orderSlotPrefab;
     public Button submitButton;
+    public Text completedOrdersDisplay;
     public List<Flower> easyFlowers = new List<Flower>();
     public List<Flower> mediumFlowers = new List<Flower>();
     public List<Flower> hardFlowers = new List<Flower>();
@@ -41,6 +42,7 @@ public class OrderTracker : MonoBehaviour
             playerState.playerMoney += (int)(playerState.baseFlowerPrice * info.flower.valueMultiplier * orderValueMultiplier);
         }
         completedOrders++;
+        completedOrdersDisplay.text = $"{completedOrders} orders done";
         requestedItems.Clear();
         if (completedOrders > unlockHardAfterCompleting)
         {
@@ -77,6 +79,7 @@ public class OrderTracker : MonoBehaviour
         }
 
         GenerateNewOrder(Difficulty.Easy);
+        completedOrdersDisplay.text = $"{completedOrders} orders done";
     }
 
     private void Update()

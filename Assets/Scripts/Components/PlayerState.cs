@@ -24,13 +24,9 @@ public class PlayerState : MonoBehaviour
     public int baseFlowerPrice = 10;
     public float flowerSeedChance = 0.25f;
     public float flowerHybridChance = 0.2f;
-    public float debtMultiplier = 2.0f;
-    public int daysBetweenPayments = 7;
 
     public List<FlowerInfo> inventory = new List<FlowerInfo>();
     public int playerMoney = 10;
-    public int amountDue = 25;
-    public int daysRemaining = 7;
     public Mode mode;
     public Flower selectedFlower;
     public bool isSeed;
@@ -38,19 +34,4 @@ public class PlayerState : MonoBehaviour
     public FlowerInfo GetInventoryInfo(Flower flower) => inventory.Find(it => it.flower == flower);
 
     public int GetSeedCost(Flower flower) => flower.valueMultiplier * baseSeedCost;
-
-    public void OnSleep()
-    {
-        daysRemaining--;
-        if (daysRemaining < 0)
-        {
-            playerMoney -= amountDue;
-            if (playerMoney < 0)
-            {
-                SceneManager.LoadScene("TitleScene");
-            }
-            daysRemaining = daysBetweenPayments;
-            amountDue = (int)(amountDue * debtMultiplier);
-        }
-    }
 }
