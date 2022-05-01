@@ -43,5 +43,14 @@
 			"author": "TinyWorlds",
 			"license": "CC0",
 			"link": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud"
+		},
+		{
+			"type": "Font",
+			"author": "Buch",
+			"file": "Font/buch_bitmap_fonts.png",
+			"license": "CC0 (Public Domain)",
+			"link": "https://opengameart.org/content/three-little-bitmap-fonts"
+			"notes": "An edited version is used in Logo.aseprite and its derivatives."
+		}
 	]
 }
