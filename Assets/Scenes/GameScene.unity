@@ -9892,8 +9892,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSeedCost: 5
   baseFlowerPrice: 10
-  flowerSeedChance: 0.1
-  flowerHybridChance: 0.5
+  flowerSeedChance: 0.25
+  flowerHybridChance: 0.2
   inventory:
   - flower: {fileID: 11400000, guid: cc03753b788bf4c4eb10edddb047bd10, type: 2}
     seedCount: 0
