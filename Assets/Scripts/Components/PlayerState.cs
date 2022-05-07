@@ -37,7 +37,6 @@ public class PlayerState : MonoBehaviour
     public int playerMoney = 10;
     public Mode mode;
     public IItem selectedItem;
-    public bool isSeed;
 
     public AudioClip placeSound;
     public AudioClip removeSound;

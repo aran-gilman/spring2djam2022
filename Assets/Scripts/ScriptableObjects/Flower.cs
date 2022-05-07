@@ -12,6 +12,7 @@ public class Flower : TileBase
     public bool canBuySeeds;
 
     public FlowerItem Item() => new FlowerItem(this);
+    public SeedItem SeedItem() => new SeedItem(this);
 
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {

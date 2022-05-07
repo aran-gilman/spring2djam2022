@@ -33,10 +33,14 @@ public class InventorySlot : MonoBehaviour
             return;
         }
 
-        if (itemType == ItemType.Seed || playerState.mode == PlayerState.Mode.Place)
+        if (itemType == ItemType.Seed)
+        {
+            playerState.selectedItem = flower.SeedItem();
+            return;
+        }
+        else if (playerState.mode == PlayerState.Mode.Place)
         {
             playerState.selectedItem = flower.Item();
-            playerState.isSeed = itemType == ItemType.Seed;
             return;
         }
 

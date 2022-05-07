@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class FlowerItem : IItem
+public class SeedItem : IItem
 {
     public Flower Flower { get; private set; }
+    public Sprite Sprite => Flower.seedSprite;
 
-    public Sprite Sprite => Flower.flowerSprite;
-
-    public FlowerItem(Flower flower)
+    public SeedItem(Flower flower)
     {
         Flower = flower;
     }
@@ -21,7 +20,7 @@ public class FlowerItem : IItem
 
         if (playerState.flowerState.GetGrowthStage(cell) == FlowerState.GrowthStage.NoFlower)
         {
-            PlaceFlower(playerState, cell);
+            PlaceSeed(playerState, cell);
         }
         else
         {
@@ -29,17 +28,26 @@ public class FlowerItem : IItem
         }
     }
 
-    private void PlaceFlower(PlayerState playerState, Vector3Int cell)
+    private void PlaceSeed(PlayerState playerState, Vector3Int cell)
     {
         PlayerState.FlowerInfo info = playerState.GetInventoryInfo(Flower);
-        if (info.flowerCount > 0)
+        if (info.seedCount > 0)
         {
-            info.flowerCount -= 1;
-            playerState.audioSource.PlayOneShot(playerState.placeSound);
-            playerState.flowerState.SetFlower(cell, Flower, FlowerState.GrowthStage.Flower);
+            info.seedCount -= 1;
         }
+        else if (Flower.canBuySeeds && playerState.playerMoney >= playerState.GetSeedCost(Flower))
+        {
+            playerState.playerMoney -= playerState.GetSeedCost(Flower);
+        }
+        else
+        {
+            return;
+        }
+        playerState.audioSource.PlayOneShot(playerState.placeSound);
+        playerState.flowerState.SetFlower(cell, Flower, FlowerState.GrowthStage.Sprout);
     }
-
+    
+    // TODO: Figure out a good way to share this code with FlowerItem instead of duplicating it.
     private void RemoveFlower(PlayerState playerState, Vector3Int cell)
     {
         FlowerState.GrowthStage stage = playerState.flowerState.GetGrowthStage(cell);
