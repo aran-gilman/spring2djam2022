@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -8823056757382171243
     second: Panel_White
+  - first:
+      213: 8172746116404924314
+    second: Panel_Green
+  - first:
+      213: 6009285187920744075
+    second: Panel_Red
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +176,48 @@ TextureImporter:
       bones: []
       spriteID: 595302f20a43e8580800000000000000
       internalID: -8823056757382171243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panel_Green
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9fc4c3ba4d6b6170800000000000000
+      internalID: 8172746116404924314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panel_Red
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e48043a05456350800000000000000
+      internalID: 6009285187920744075
       vertices: []
       indices: 
       edges: []
