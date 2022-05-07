@@ -9965,9 +9965,9 @@ MonoBehaviour:
     isDiscovered: 1
   playerMoney: 10
   mode: 0
-  isSeed: 0
   placeSound: {fileID: 8300000, guid: e9c395b2f74af9246b349a3e0ac18978, type: 3}
   removeSound: {fileID: 8300000, guid: 7b3b7cb0f18ecbc4a990ee24b6ef7b43, type: 3}
+  moneySound: {fileID: 8300000, guid: ce2bf1b34ded7d44797d252d71a5a802, type: 3}
 --- !u!4 &2068302485
 Transform:
   m_ObjectHideFlags: 0

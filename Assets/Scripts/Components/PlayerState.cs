@@ -40,6 +40,7 @@ public class PlayerState : MonoBehaviour
 
     public AudioClip placeSound;
     public AudioClip removeSound;
+    public AudioClip moneySound;
 
     public FlowerInfo GetInventoryInfo(Flower flower) => inventory.Find(it => it.flower == flower);
 

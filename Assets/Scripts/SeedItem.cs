@@ -14,16 +14,17 @@ public class SeedItem : PlantableItem
         if (info.seedCount > 0)
         {
             info.seedCount -= 1;
+            playerState.audioSource.PlayOneShot(playerState.placeSound);
         }
         else if (Flower.canBuySeeds && playerState.playerMoney >= playerState.GetSeedCost(Flower))
         {
             playerState.playerMoney -= playerState.GetSeedCost(Flower);
+            playerState.audioSource.PlayOneShot(playerState.moneySound);
         }
         else
         {
             return;
         }
-        playerState.audioSource.PlayOneShot(playerState.placeSound);
         playerState.flowerState.SetFlower(cell, Flower, FlowerState.GrowthStage.Sprout);
     }
 }
