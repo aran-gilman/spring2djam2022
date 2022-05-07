@@ -35,7 +35,7 @@ public class InventorySlot : MonoBehaviour
 
         if (itemType == ItemType.Seed || playerState.mode == PlayerState.Mode.Place)
         {
-            playerState.selectedFlower = flower;
+            playerState.selectedItem = flower.Item();
             playerState.isSeed = itemType == ItemType.Seed;
             return;
         }

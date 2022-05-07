@@ -27,7 +27,7 @@ public class FlowerState : MonoBehaviour
         return growthStages[cell];
     }
 
-    public void SetGrowthStage(Vector3Int cell, GrowthStage stage)
+    public void SetFlower(Vector3Int cell, Flower flower, GrowthStage stage)
     {
         if (growthStages.ContainsKey(cell))
         {
@@ -37,6 +37,8 @@ public class FlowerState : MonoBehaviour
         {
             growthStages.Add(cell, stage);
         }
+        flowerTilemap.SetTile(cell, flower);
+        flowerTilemap.RefreshTile(cell);
     }
 
     public bool CanPlantFlowers(Vector3Int cell)
@@ -127,7 +129,7 @@ public class FlowerState : MonoBehaviour
 
         Flower seed = GetSeed(flowerTilemap.GetTile<Flower>(cell), adjacentFlowers.Distinct());
         Vector3Int seedCell = emptyCells[Random.Range(0, emptyCells.Count)];
-        SetGrowthStage(seedCell, GrowthStage.Seed);
+        SetFlower(seedCell, seed, GrowthStage.Seed);
         flowerTilemap.SetTile(seedCell, seed);
     }
 

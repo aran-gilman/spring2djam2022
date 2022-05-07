@@ -9869,7 +9869,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2068302485}
   - component: {fileID: 2068302484}
-  - component: {fileID: 2068302486}
   - component: {fileID: 2068302487}
   m_Layer: 0
   m_Name: PlayerState
@@ -9890,6 +9889,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896756055698a944cad0c4a6423b7253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursor: {fileID: 1632539522}
+  flowerState: {fileID: 1706451443}
+  audioSource: {fileID: 2068302487}
+  selectedItemDisplay: {fileID: 2074457700}
+  useItem:
+    m_Name: Use Item
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ed8c32d3-063d-46e1-abb0-34e959f34575
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 95d740ff-631c-4ee1-bc3a-25cb0068cfbc
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Use Item
+      m_Flags: 0
+    m_Flags: 0
   baseSeedCost: 5
   baseFlowerPrice: 10
   flowerSeedChance: 0.25
@@ -9945,8 +9965,9 @@ MonoBehaviour:
     isDiscovered: 1
   playerMoney: 10
   mode: 0
-  selectedFlower: {fileID: 0}
   isSeed: 0
+  placeSound: {fileID: 8300000, guid: e9c395b2f74af9246b349a3e0ac18978, type: 3}
+  removeSound: {fileID: 8300000, guid: 7b3b7cb0f18ecbc4a990ee24b6ef7b43, type: 3}
 --- !u!4 &2068302485
 Transform:
   m_ObjectHideFlags: 0
@@ -9961,58 +9982,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2068302486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068302483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b4f07021256df41ba2e82e13ce028b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cursor: {fileID: 1632539522}
-  selectedFlowerDisplay: {fileID: 2074457700}
-  flowerTilemap: {fileID: 1706451442}
-  flowerState: {fileID: 1706451443}
-  audioSource: {fileID: 2068302487}
-  interact:
-    m_Name: Interact
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 25dbce45-e575-4120-bd64-00d7335255d0
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: be63cca6-b935-433d-8cee-900eb0e944a1
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Interact
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 610b5acb-4069-4fb8-aa4f-865b9e00c555
-      m_Path: <Keyboard>/x
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Interact
-      m_Flags: 0
-    - m_Name: 
-      m_Id: cdae5c2d-97e2-44bc-bbfb-23655ba1124d
-      m_Path: <Keyboard>/enter
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Interact
-      m_Flags: 0
-    m_Flags: 0
-  placeSound: {fileID: 8300000, guid: 7b3b7cb0f18ecbc4a990ee24b6ef7b43, type: 3}
-  removeSound: {fileID: 8300000, guid: e9c395b2f74af9246b349a3e0ac18978, type: 3}
 --- !u!82 &2068302487
 AudioSource:
   m_ObjectHideFlags: 0

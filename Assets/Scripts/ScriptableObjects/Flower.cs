@@ -11,6 +11,8 @@ public class Flower : TileBase
     public int valueMultiplier;
     public bool canBuySeeds;
 
+    public FlowerItem Item() => new FlowerItem(this);
+
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {
         FlowerState flowerstate = tilemap.GetComponent<FlowerState>();
