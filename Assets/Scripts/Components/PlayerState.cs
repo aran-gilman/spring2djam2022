@@ -15,6 +15,13 @@ public class PlayerState : MonoBehaviour
         public bool isDiscovered;
     }
 
+    [Serializable]
+    public class ToolInfo
+    {
+        public Tool tool;
+        public int level;
+    }
+
     public enum Mode
     {
         Place,
@@ -34,6 +41,7 @@ public class PlayerState : MonoBehaviour
     public float flowerHybridChance = 0.2f;
 
     public List<FlowerInfo> inventory = new List<FlowerInfo>();
+    public List<ToolInfo> tools = new List<ToolInfo>();
     public int playerMoney = 10;
     public Mode mode;
     public IItem selectedItem;
@@ -43,6 +51,7 @@ public class PlayerState : MonoBehaviour
     public AudioClip moneySound;
 
     public FlowerInfo GetInventoryInfo(Flower flower) => inventory.Find(it => it.flower == flower);
+    public ToolInfo GetToolInfo(Tool tool) => tools.Find(it => it.tool == tool);
 
     public int GetSeedCost(Flower flower) => flower.valueMultiplier * baseSeedCost;
 

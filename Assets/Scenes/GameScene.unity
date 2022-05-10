@@ -2690,6 +2690,7 @@ GameObject:
   - component: {fileID: 493051646}
   - component: {fileID: 493051645}
   - component: {fileID: 493051644}
+  - component: {fileID: 493051647}
   m_Layer: 5
   m_Name: Scythe
   m_TagString: Untagged
@@ -2761,7 +2762,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 493051645}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 493051647}
+        m_TargetAssemblyTypeName: ToolSlot, Assembly-CSharp
+        m_MethodName: SetHeldTool
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2a7c8faed935a504d85e901af8dd836e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Tool, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &493051645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2800,6 +2813,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493051642}
   m_CullTransparentMesh: 1
+--- !u!114 &493051647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493051642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8897d10486defc84a90d3f26bf8d3e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &636243161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10817,6 +10842,9 @@ MonoBehaviour:
     seedCount: 0
     flowerCount: 0
     isDiscovered: 1
+  tools:
+  - tool: {fileID: 11400000, guid: 2a7c8faed935a504d85e901af8dd836e, type: 2}
+    level: 1
   playerMoney: 10
   mode: 0
   placeSound: {fileID: 8300000, guid: e9c395b2f74af9246b349a3e0ac18978, type: 3}
