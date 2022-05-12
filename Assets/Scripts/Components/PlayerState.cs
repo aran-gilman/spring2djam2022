@@ -30,6 +30,7 @@ public class PlayerState : MonoBehaviour
     }
 
     public Cursor cursor;
+    public SpriteRenderer rangeDisplay;
     public FlowerState flowerState;
     public AudioSource audioSource;
     public SpriteRenderer selectedItemDisplay;
@@ -90,6 +91,7 @@ public class PlayerState : MonoBehaviour
         {
             return;
         }
+
         ToolInfo info = GetToolInfo(currentTool);
         if (info == null)
         {
@@ -106,6 +108,8 @@ public class PlayerState : MonoBehaviour
             info.currentRange -= 1;
         }
         info.currentRange = Mathf.Clamp(info.currentRange, 1, info.level);
+        int diameter = info.currentRange * 2 + 1;
+        rangeDisplay.size = new Vector2(diameter, diameter);
     }
 
     private void Update()
@@ -126,6 +130,6 @@ public class PlayerState : MonoBehaviour
             return;
         }
         selectedItemDisplay.sprite = selectedItem.Sprite;
-
+        rangeDisplay.gameObject.SetActive(selectedItem != null & selectedItem.ShouldShowRange());
     }
 }
