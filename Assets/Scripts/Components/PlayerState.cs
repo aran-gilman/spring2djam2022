@@ -53,6 +53,10 @@ public class PlayerState : MonoBehaviour
     public AudioClip removeSound;
     public AudioClip moneySound;
 
+    public Color transparentHeldItemColor;
+
+    public static PlayerState Get() => GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerState>();
+
     public FlowerInfo GetInventoryInfo(Flower flower) => inventory.Find(it => it.flower == flower);
     public ToolInfo GetToolInfo(Tool tool) => tools.Find(it => it.tool == tool);
 
@@ -130,6 +134,14 @@ public class PlayerState : MonoBehaviour
             return;
         }
         selectedItemDisplay.sprite = selectedItem.Sprite;
+        if (selectedItem.IsTransparent())
+        {
+            selectedItemDisplay.color = transparentHeldItemColor;
+        }
+        else
+        {
+            selectedItemDisplay.color = Color.white;
+        }
         rangeDisplay.gameObject.SetActive(selectedItem != null & selectedItem.ShouldShowRange());
     }
 }

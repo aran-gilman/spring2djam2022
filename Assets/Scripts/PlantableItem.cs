@@ -30,6 +30,8 @@ public abstract class PlantableItem : IItem
 
     public bool ShouldShowRange() => false;
 
+    public bool IsTransparent() => true;
+
     protected abstract void PlantObject(PlayerState playerState, Vector3Int cell);
 
     private void RemoveObject(PlayerState playerState, Vector3Int cell)

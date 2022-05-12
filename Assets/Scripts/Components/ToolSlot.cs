@@ -1,10 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolSlot : MonoBehaviour
 {
-    public void SetHeldTool(Tool tool)
+    public Button button;
+    public Text buttonText;
+    public Image buttonImage;
+
+    public Tool tool;
+
+    public void SetHeldTool()
     {
-        if (playerState.selectedItem == tool)
+        if (playerState.selectedItem != null && playerState.selectedItem.Equals(tool))
         {
             playerState.selectedItem = null;
         }
@@ -18,6 +25,24 @@ public class ToolSlot : MonoBehaviour
 
     private void Awake()
     {
-        playerState = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerState>();
+        playerState = PlayerState.Get();
+    }
+
+    private void Update()
+    {
+        PlayerState.ToolInfo info = playerState.GetToolInfo(tool);
+        if (info.level == 0)
+        {
+            buttonImage.color = Color.black;
+            buttonText.gameObject.SetActive(false);
+            button.interactable = false;
+        }
+        else
+        {
+            buttonImage.color = Color.white;
+            buttonText.gameObject.SetActive(true);
+            buttonText.text = $"LV{info.level}";
+            button.interactable = true;
+        }
     }
 }

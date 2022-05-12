@@ -7,4 +7,5 @@ public interface IItem
     void Activate(PlayerState playerState);
 
     bool ShouldShowRange();
+    bool IsTransparent();
 }
