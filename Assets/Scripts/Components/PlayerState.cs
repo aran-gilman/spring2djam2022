@@ -20,6 +20,7 @@ public class PlayerState : MonoBehaviour
     {
         public Tool tool;
         public int level;
+        public int currentRange;
     }
 
     public enum Mode
@@ -34,6 +35,7 @@ public class PlayerState : MonoBehaviour
     public SpriteRenderer selectedItemDisplay;
 
     public InputAction useItem;
+    public InputAction changeToolRange;
 
     public int baseSeedCost = 5;
     public int baseFlowerPrice = 10;
@@ -58,16 +60,19 @@ public class PlayerState : MonoBehaviour
     private void Awake()
     {
         useItem.performed += ctx => OnUseItem();
+        changeToolRange.performed += OnChangeToolRange;
     }
 
     private void OnEnable()
     {
         useItem.Enable();
+        changeToolRange.Enable();
     }
 
     private void OnDisable()
     {
         useItem.Disable();
+        changeToolRange.Disable();
     }
 
     private void OnUseItem()
@@ -77,6 +82,32 @@ public class PlayerState : MonoBehaviour
             selectedItem.Activate(this);
         }
     }
+
+    private void OnChangeToolRange(InputAction.CallbackContext ctx)
+    {
+        Tool currentTool = selectedItem as Tool;
+        if (currentTool == null)
+        {
+            return;
+        }
+        ToolInfo info = GetToolInfo(currentTool);
+        if (info == null)
+        {
+            return;
+        }
+
+        float val = ctx.ReadValue<float>();
+        if (val > 0)
+        {
+            info.currentRange += 1;
+        }
+        else
+        {
+            info.currentRange -= 1;
+        }
+        info.currentRange = Mathf.Clamp(info.currentRange, 1, info.level);
+    }
+
     private void Update()
     {
         // Prevent "clicking through" the UI

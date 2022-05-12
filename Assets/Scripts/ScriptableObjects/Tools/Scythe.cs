@@ -13,7 +13,7 @@ public class Scythe : Tool
         PlayerState.ToolInfo toolInfo = playerState.GetToolInfo(this);
         FlowerState flowerState = playerState.flowerState;
 
-        foreach (Vector3Int cell in GetCellsInRange(playerState.cursor.GetSelectedCell(), toolInfo.level))
+        foreach (Vector3Int cell in GetCellsInRange(playerState.cursor.GetSelectedCell(), toolInfo.currentRange))
         {
             Flower flower = flowerState.flowerTilemap.GetTile<Flower>(cell);
             FlowerState.GrowthStage growthStage = flowerState.GetGrowthStage(cell);

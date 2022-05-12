@@ -4,7 +4,7 @@ public class ToolSlot : MonoBehaviour
 {
     public void SetHeldTool(Tool tool)
     {
-        if ((Tool)playerState.selectedItem == tool)
+        if (playerState.selectedItem == tool)
         {
             playerState.selectedItem = null;
         }

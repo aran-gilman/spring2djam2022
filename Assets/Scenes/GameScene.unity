@@ -10789,6 +10789,39 @@ MonoBehaviour:
       m_Action: Use Item
       m_Flags: 0
     m_Flags: 0
+  changeToolRange:
+    m_Name: Change Tool Range
+    m_Type: 0
+    m_ExpectedControlType: Axis
+    m_Id: f0747295-12dd-428a-814c-4ef08c67e78a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Q/E
+      m_Id: 521c9d39-3bc1-4e97-9886-b022144c926c
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Change Tool Range
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: f9c6e6ba-a19b-429a-aa55-5ffa2b14b496
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Change Tool Range
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: dbc216fe-d38c-42f0-be8a-4447151e3ac8
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Change Tool Range
+      m_Flags: 8
+    m_Flags: 0
   baseSeedCost: 5
   baseFlowerPrice: 10
   flowerSeedChance: 0.25
@@ -10844,7 +10877,8 @@ MonoBehaviour:
     isDiscovered: 1
   tools:
   - tool: {fileID: 11400000, guid: 2a7c8faed935a504d85e901af8dd836e, type: 2}
-    level: 1
+    level: 5
+    currentRange: 1
   playerMoney: 10
   mode: 0
   placeSound: {fileID: 8300000, guid: e9c395b2f74af9246b349a3e0ac18978, type: 3}
