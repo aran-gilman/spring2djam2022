@@ -25,6 +25,6 @@ public class SeedItem : PlantableItem
         {
             return;
         }
-        playerState.flowerState.SetFlower(cell, Flower, FlowerState.GrowthStage.Sprout);
+        playerState.flowerState.SetFlower(cell, Flower, FlowerState.GrowthStage.Seed);
     }
 }
