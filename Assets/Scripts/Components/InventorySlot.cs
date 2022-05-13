@@ -18,7 +18,6 @@ public class InventorySlot : MonoBehaviour
         Cost
     }
 
-
     public Image image;
     public Text text;
     public Button button;
@@ -28,19 +27,14 @@ public class InventorySlot : MonoBehaviour
 
     public void OnClick()
     {
-        if (!playerState.GetInventoryInfo(flower).isDiscovered)
-        {
-            return;
-        }
-
         if (itemType == ItemType.Seed)
         {
-            playerState.selectedItem = flower.SeedItem();
+            playerState.SetSelectedItem(flower.SeedItem());
             return;
         }
         else if (playerState.mode == PlayerState.Mode.Place)
         {
-            playerState.selectedItem = flower.Item();
+            playerState.SetSelectedItem(flower.Item());
             return;
         }
 
@@ -63,7 +57,7 @@ public class InventorySlot : MonoBehaviour
     {
         if (playerState == null)
         {
-            playerState = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerState>();
+            playerState = PlayerState.Get();
         }
 
         if (flower == null)

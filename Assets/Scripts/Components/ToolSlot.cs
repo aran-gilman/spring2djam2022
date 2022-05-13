@@ -11,13 +11,13 @@ public class ToolSlot : MonoBehaviour
 
     public void SetHeldTool()
     {
-        if (playerState.selectedItem != null && playerState.selectedItem.Equals(tool))
+        if (playerState.GetSelectedItem() != null && playerState.GetSelectedItem().Equals(tool))
         {
-            playerState.selectedItem = null;
+            playerState.SetSelectedItem(null);
         }
         else
         {
-            playerState.selectedItem = tool;
+            playerState.SetSelectedItem(tool);
         }
     }
 

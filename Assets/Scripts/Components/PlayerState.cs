@@ -46,7 +46,6 @@ public class PlayerState : MonoBehaviour
     public List<ToolInfo> tools = new List<ToolInfo>();
     public int playerMoney = 10;
     public Mode mode;
-    public IItem selectedItem;
 
     public AudioClip placeSound;
     public AudioClip removeSound;
@@ -61,10 +60,38 @@ public class PlayerState : MonoBehaviour
 
     public int GetSeedCost(Flower flower) => flower.valueMultiplier * baseSeedCost;
 
+    public IItem GetSelectedItem() => selectedItem;
+
+    public void SetSelectedItem(IItem newItem)
+    {
+        selectedItem = newItem;
+
+        if (selectedItem == null)
+        {
+            selectedItemDisplay.sprite = null;
+            rangeDisplay.gameObject.SetActive(false);
+            return;
+        }
+
+        selectedItemDisplay.sprite = selectedItem.Sprite;
+        if (selectedItem.IsTransparent())
+        {
+            selectedItemDisplay.color = transparentHeldItemColor;
+        }
+        else
+        {
+            selectedItemDisplay.color = Color.white;
+        }
+        rangeDisplay.gameObject.SetActive(selectedItem.ShouldShowRange());
+    }
+
+    private IItem selectedItem;
+
     private void Awake()
     {
         inputActions.FindAction("UseItem").performed += ctx => OnUseItem();
         inputActions.FindAction("AdjustRange").performed += OnChangeToolRange;
+        inputActions.FindAction("DeselectHeldItem").performed += ctx => SetSelectedItem(null);
     }
 
     private void OnEnable()
@@ -124,21 +151,5 @@ public class PlayerState : MonoBehaviour
         {
             inputActions.FindActionMap("GameWorld").Enable();
         }
-
-        if (selectedItem == null)
-        {
-            selectedItemDisplay.sprite = null;
-            return;
-        }
-        selectedItemDisplay.sprite = selectedItem.Sprite;
-        if (selectedItem.IsTransparent())
-        {
-            selectedItemDisplay.color = transparentHeldItemColor;
-        }
-        else
-        {
-            selectedItemDisplay.color = Color.white;
-        }
-        rangeDisplay.gameObject.SetActive(selectedItem != null & selectedItem.ShouldShowRange());
     }
 }
