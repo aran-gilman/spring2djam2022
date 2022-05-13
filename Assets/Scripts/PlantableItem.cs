@@ -18,7 +18,7 @@ public abstract class PlantableItem : IItem
             return;
         }
 
-        if (playerState.flowerState.GetGrowthStage(cell) == FlowerState.GrowthStage.NoFlower)
+        if (playerState.flowerState.GetInfo(cell).growthStage == FlowerState.GrowthStage.NoFlower)
         {
             PlantObject(playerState, cell);
         }
@@ -36,7 +36,7 @@ public abstract class PlantableItem : IItem
 
     private void RemoveObject(PlayerState playerState, Vector3Int cell)
     {
-        FlowerState.GrowthStage stage = playerState.flowerState.GetGrowthStage(cell);
+        FlowerState.GrowthStage stage = playerState.flowerState.GetInfo(cell).growthStage;
         if (stage == FlowerState.GrowthStage.Sprout)
         {
             return;

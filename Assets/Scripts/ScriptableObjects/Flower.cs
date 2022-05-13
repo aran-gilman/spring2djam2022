@@ -23,7 +23,7 @@ public class Flower : TileBase
             return;
         }
 
-        FlowerState.GrowthStage stage = flowerstate.GetGrowthStage(position);
+        FlowerState.GrowthStage stage = flowerstate.GetInfo(position).growthStage;
         switch(stage)
         {
             case FlowerState.GrowthStage.NoFlower:

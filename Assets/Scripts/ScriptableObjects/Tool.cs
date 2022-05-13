@@ -19,6 +19,19 @@ public abstract class Tool : ScriptableObject, IItem
 
     public bool IsTransparent() => false;
 
+    protected IEnumerable<Vector3Int> GetCellsInRange(Vector3Int center, int range)
+    {
+        List<Vector3Int> cells = new List<Vector3Int>();
+        for (int x = -range; x <= range; x++)
+        {
+            for (int y = -range; y <= range; y++)
+            {
+                cells.Add(center + new Vector3Int(x, y, 0));
+            }
+        }
+        return cells;
+    }
+
     [SerializeField]
     private Sprite sprite;
 }

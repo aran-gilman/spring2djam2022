@@ -13,29 +13,54 @@ public class FlowerState : MonoBehaviour
         Flower
     }
 
+    public class CellInfo
+    {
+        public Vector3Int cell;
+        public GrowthStage growthStage;
+        public bool isWatered;
+    }
+
     public Tilemap flowerTilemap;
+    public Tilemap isWateredTilemap;
     public Tilemap backgroundTilemap;
+
+    public TileBase isWateredTile;
 
     public List<HybridRule> hybridRules = new List<HybridRule>();
 
-    public GrowthStage GetGrowthStage(Vector3Int cell)
+    public void Water(Vector3Int cell)
     {
-        if (!growthStages.ContainsKey(cell))
-        {
-            growthStages.Add(cell, GrowthStage.NoFlower);
-        }
-        return growthStages[cell];
+        GetInfo(cell).isWatered = true;
+        isWateredTilemap.SetTile(cell, isWateredTile);
     }
+
+    public CellInfo GetInfo(Vector3Int cell)
+    {
+        if (!cellInfo.ContainsKey(cell))
+        {
+            cellInfo.Add(cell, new CellInfo()
+            {
+                cell = cell
+            });
+        }
+        return cellInfo[cell];
+    }
+
+    public Flower GetFlower(Vector3Int cell) => flowerTilemap.GetTile<Flower>(cell);
 
     public void SetFlower(Vector3Int cell, Flower flower, GrowthStage stage)
     {
-        if (growthStages.ContainsKey(cell))
+        if (cellInfo.ContainsKey(cell))
         {
-            growthStages[cell] = stage;
+            cellInfo[cell].growthStage = stage;
         }
         else
         {
-            growthStages.Add(cell, stage);
+            cellInfo.Add(cell, new CellInfo()
+            {
+                cell = cell,
+                growthStage = stage
+            });
         }
         flowerTilemap.SetTile(cell, flower);
         flowerTilemap.RefreshTile(cell);
@@ -49,17 +74,22 @@ public class FlowerState : MonoBehaviour
 
     public void AdvanceAll()
     {
-        List<Vector3Int> cellsToCheck = growthStages.Keys.ToList();
+        List<Vector3Int> cellsToCheck = cellInfo.Keys.ToList();
         List<Vector3Int> grownFlowers = new List<Vector3Int>();
         foreach (Vector3Int cell in cellsToCheck)
         {
-            GrowthStage stage = growthStages[cell];
+            if (!cellInfo[cell].isWatered)
+            {
+                continue;
+            }
+
+            GrowthStage stage = cellInfo[cell].growthStage;
 
             switch (stage)
             {
                 case GrowthStage.Sprout:
 
-                    growthStages[cell] = GrowthStage.Flower;
+                    cellInfo[cell].growthStage = GrowthStage.Flower;
                     flowerTilemap.RefreshTile(cell);
                     break;
 
@@ -91,11 +121,11 @@ public class FlowerState : MonoBehaviour
     private static IEnumerable<Vector3Int> GetAdjacentCells(Vector3Int cell) => adjacentCellVectors.Select(adj => adj + cell);
 
     private PlayerState playerState;
-    private Dictionary<Vector3Int, GrowthStage> growthStages = new Dictionary<Vector3Int, GrowthStage>();
+    private Dictionary<Vector3Int, CellInfo> cellInfo = new Dictionary<Vector3Int, CellInfo>();
 
     private void Awake()
     {
-        playerState = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerState>();
+        playerState = PlayerState.Get();
     }
 
     private void MaybeCreateSeed(Vector3Int cell)
@@ -111,10 +141,10 @@ public class FlowerState : MonoBehaviour
 
         foreach (Vector3Int adj in adjacentCells)
         {
-            GrowthStage stage = GetGrowthStage(adj);
+            GrowthStage stage = GetInfo(adj).growthStage;
             if (stage == GrowthStage.Flower)
             {
-                adjacentFlowers.Add(flowerTilemap.GetTile<Flower>(adj));
+                adjacentFlowers.Add(GetFlower(adj));
             }
             else if (stage == GrowthStage.NoFlower)
             {

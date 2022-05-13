@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(menuName = "Tools/Scythe")]
 public class Scythe : Tool
@@ -15,8 +10,8 @@ public class Scythe : Tool
 
         foreach (Vector3Int cell in GetCellsInRange(playerState.cursor.GetSelectedCell(), toolInfo.currentRange))
         {
-            Flower flower = flowerState.flowerTilemap.GetTile<Flower>(cell);
-            FlowerState.GrowthStage growthStage = flowerState.GetGrowthStage(cell);
+            Flower flower = flowerState.GetFlower(cell);
+            FlowerState.GrowthStage growthStage = flowerState.GetInfo(cell).growthStage;
             switch (growthStage)
             {
                 case FlowerState.GrowthStage.NoFlower:
@@ -33,18 +28,5 @@ public class Scythe : Tool
             }
             flowerState.SetFlower(cell, null, FlowerState.GrowthStage.NoFlower);
         }
-    }
-
-    private IEnumerable<Vector3Int> GetCellsInRange(Vector3Int center, int range)
-    {
-        List<Vector3Int> cells = new List<Vector3Int>();
-        for (int x = -range; x <= range; x++)
-        {
-            for (int y = -range; y <= range; y++)
-            {
-                cells.Add(center + new Vector3Int(x, y, 0));
-            }
-        }
-        return cells;
     }
 }
