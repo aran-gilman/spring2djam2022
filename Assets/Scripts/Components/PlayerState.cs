@@ -62,6 +62,7 @@ public class PlayerState : MonoBehaviour
 
     public IItem GetSelectedItem() => selectedItem;
 
+    // Use a method instead of a property to better convey that there is non-trivial logic involved
     public void SetSelectedItem(IItem newItem)
     {
         selectedItem = newItem;
