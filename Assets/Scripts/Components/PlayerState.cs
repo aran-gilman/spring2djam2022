@@ -35,8 +35,7 @@ public class PlayerState : MonoBehaviour
     public AudioSource audioSource;
     public SpriteRenderer selectedItemDisplay;
 
-    public InputAction useItem;
-    public InputAction changeToolRange;
+    public InputActionAsset inputActions;
 
     public int baseSeedCost = 5;
     public int baseFlowerPrice = 10;
@@ -64,20 +63,18 @@ public class PlayerState : MonoBehaviour
 
     private void Awake()
     {
-        useItem.performed += ctx => OnUseItem();
-        changeToolRange.performed += OnChangeToolRange;
+        inputActions.FindAction("UseItem").performed += ctx => OnUseItem();
+        inputActions.FindAction("AdjustRange").performed += OnChangeToolRange;
     }
 
     private void OnEnable()
     {
-        useItem.Enable();
-        changeToolRange.Enable();
+        inputActions.Enable();
     }
 
     private void OnDisable()
     {
-        useItem.Disable();
-        changeToolRange.Disable();
+        inputActions.Disable();
     }
 
     private void OnUseItem()
@@ -121,11 +118,11 @@ public class PlayerState : MonoBehaviour
         // Prevent "clicking through" the UI
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            useItem.Disable();
+            inputActions.FindActionMap("GameWorld").Disable();
         }
         else
         {
-            useItem.Enable();
+            inputActions.FindActionMap("GameWorld").Enable();
         }
 
         if (selectedItem == null)

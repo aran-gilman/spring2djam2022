@@ -11450,56 +11450,7 @@ MonoBehaviour:
   flowerState: {fileID: 1706451443}
   audioSource: {fileID: 2068302487}
   selectedItemDisplay: {fileID: 2074457700}
-  useItem:
-    m_Name: Use Item
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: ed8c32d3-063d-46e1-abb0-34e959f34575
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 95d740ff-631c-4ee1-bc3a-25cb0068cfbc
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Use Item
-      m_Flags: 0
-    m_Flags: 0
-  changeToolRange:
-    m_Name: Change Tool Range
-    m_Type: 0
-    m_ExpectedControlType: Axis
-    m_Id: f0747295-12dd-428a-814c-4ef08c67e78a
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Q/E
-      m_Id: 521c9d39-3bc1-4e97-9886-b022144c926c
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Change Tool Range
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: f9c6e6ba-a19b-429a-aa55-5ffa2b14b496
-      m_Path: <Keyboard>/q
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Change Tool Range
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: dbc216fe-d38c-42f0-be8a-4447151e3ac8
-      m_Path: <Keyboard>/e
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Change Tool Range
-      m_Flags: 8
-    m_Flags: 0
+  inputActions: {fileID: -944628639613478452, guid: 79c30274e8f070545ae19f4c8fecf9e0, type: 3}
   baseSeedCost: 5
   baseFlowerPrice: 10
   flowerSeedChance: 0.25
