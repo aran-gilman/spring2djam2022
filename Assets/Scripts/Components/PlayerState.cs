@@ -19,6 +19,7 @@ public class PlayerState : MonoBehaviour
     public class ToolInfo
     {
         public Tool tool;
+        public bool isOwned;
         public int level;
         public int currentRange;
     }

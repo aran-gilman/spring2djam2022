@@ -11,6 +11,7 @@ public abstract class Tool : ScriptableObject, IItem
     }
 
     public Sprite Sprite => sprite;
+    public int purchaseCost;
     public List<Upgrade> upgrades = new List<Upgrade>();
 
     public abstract void Activate(PlayerState playerState);

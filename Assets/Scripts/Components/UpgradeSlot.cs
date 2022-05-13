@@ -10,8 +10,15 @@ public class UpgradeSlot : MonoBehaviour
     public void UpgradeTool()
     {
         PlayerState.ToolInfo info = playerState.GetToolInfo(tool);
-        playerState.playerMoney -= tool.upgrades[info.level].cost;
-        info.level += 1;
+        if (info.isOwned)
+        {
+            playerState.playerMoney -= tool.upgrades[info.level].cost;
+            info.level += 1;
+        }
+        {
+            playerState.playerMoney -= tool.purchaseCost;
+            info.isOwned = true;
+        }
     }
 
     private PlayerState playerState;
@@ -31,7 +38,7 @@ public class UpgradeSlot : MonoBehaviour
         }
         else
         {
-            int upgradeCost = tool.upgrades[info.level].cost;
+            int upgradeCost = info.isOwned ? tool.upgrades[info.level].cost : tool.purchaseCost;
             button.interactable = playerState.playerMoney >= upgradeCost;
             buttonText.text = $"{upgradeCost}G";
         }

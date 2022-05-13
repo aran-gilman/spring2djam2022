@@ -31,18 +31,18 @@ public class ToolSlot : MonoBehaviour
     private void Update()
     {
         PlayerState.ToolInfo info = playerState.GetToolInfo(tool);
-        if (info.level == 0)
-        {
-            buttonImage.color = Color.black;
-            buttonText.gameObject.SetActive(false);
-            button.interactable = false;
-        }
-        else
+        if (info.isOwned)
         {
             buttonImage.color = Color.white;
             buttonText.gameObject.SetActive(true);
             buttonText.text = $"LV{info.level}";
             button.interactable = true;
+        }
+        else
+        {
+            buttonImage.color = Color.black;
+            buttonText.gameObject.SetActive(false);
+            button.interactable = false;
         }
     }
 }

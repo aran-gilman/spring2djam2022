@@ -11132,10 +11132,12 @@ MonoBehaviour:
     isDiscovered: 1
   tools:
   - tool: {fileID: 11400000, guid: 2a7c8faed935a504d85e901af8dd836e, type: 2}
+    isOwned: 0
     level: 0
     currentRange: 1
   - tool: {fileID: 11400000, guid: 8519c7a07539857449f389bd82d3d3cc, type: 2}
-    level: 1
+    isOwned: 1
+    level: 0
     currentRange: 1
   playerMoney: 10
   mode: 0

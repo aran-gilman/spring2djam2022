@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82d16adbb83aaf44f8f8864f0c379c9e, type: 3}
   m_Name: Scythe
   m_EditorClassIdentifier: 
+  purchaseCost: 100
   upgrades:
-  - cost: 100
   - cost: 200
   - cost: 500
   sprite: {fileID: 21300000, guid: 0f01478b0ed24764e9d42e73483b00a7, type: 3}
