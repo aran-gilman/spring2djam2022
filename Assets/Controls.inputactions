@@ -52,6 +52,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "DeselectHeldItem",
+                    "type": "Button",
+                    "id": "aa517a11-b929-4b73-b0d2-bb6d912ed73f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -87,6 +96,17 @@
                     "action": "AdjustRange",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "757444f9-a3e5-4d23-bccd-8016f30a2113",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DeselectHeldItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

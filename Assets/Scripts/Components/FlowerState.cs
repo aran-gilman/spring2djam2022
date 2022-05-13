@@ -82,6 +82,8 @@ public class FlowerState : MonoBehaviour
             {
                 continue;
             }
+            cellInfo[cell].isWatered = false;
+            isWateredTilemap.SetTile(cell, null);
 
             GrowthStage stage = cellInfo[cell].growthStage;
 
