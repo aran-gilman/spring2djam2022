@@ -21,7 +21,7 @@ public class PlayerState : MonoBehaviour
         public Tool tool;
         public bool isOwned;
         public int level;
-        public int currentRange;
+        public int selectedRange;
     }
 
     public enum Mode
@@ -76,7 +76,7 @@ public class PlayerState : MonoBehaviour
         }
 
         selectedItemDisplay.sprite = selectedItem.Sprite;
-        if (selectedItem.IsTransparent())
+        if (selectedItem.IsTransparentWhenHeld())
         {
             selectedItemDisplay.color = transparentHeldItemColor;
         }
@@ -84,7 +84,7 @@ public class PlayerState : MonoBehaviour
         {
             selectedItemDisplay.color = Color.white;
         }
-        rangeDisplay.gameObject.SetActive(selectedItem.ShouldShowRange());
+        selectedItem.UpdateRangeDisplay(rangeDisplay);
     }
 
     private IItem selectedItem;
@@ -131,15 +131,13 @@ public class PlayerState : MonoBehaviour
         float val = ctx.ReadValue<float>();
         if (val > 0)
         {
-            info.currentRange += 1;
+            info.selectedRange += 1;
         }
         else
         {
-            info.currentRange -= 1;
+            info.selectedRange -= 1;
         }
-        info.currentRange = Mathf.Clamp(info.currentRange, 1, info.level);
-        int diameter = info.currentRange * 2 + 1;
-        rangeDisplay.size = new Vector2(diameter, diameter);
+        selectedItem.UpdateRangeDisplay(rangeDisplay);
     }
 
     private void Update()

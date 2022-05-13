@@ -9,7 +9,7 @@ public class WateringCan : Tool
     {
         PlayerState.ToolInfo toolInfo = playerState.GetToolInfo(this);
 
-        foreach (Vector3Int cell in GetCellsInRange(playerState.cursor.GetSelectedCell(), toolInfo.currentRange))
+        foreach (Vector3Int cell in GetCellsInRange(playerState.cursor.GetSelectedCell(), toolInfo.selectedRange))
         {
             playerState.flowerState.Water(cell);
         }

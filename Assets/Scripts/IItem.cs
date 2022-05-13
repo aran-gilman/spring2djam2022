@@ -4,8 +4,10 @@ public interface IItem
 {
     Sprite Sprite { get; }
 
+    bool IsTransparentWhenHeld();
+
     void Activate(PlayerState playerState);
 
-    bool ShouldShowRange();
-    bool IsTransparent();
+    void UpdateRangeDisplay(SpriteRenderer rangeDisplay);
+
 }

@@ -28,9 +28,12 @@ public abstract class PlantableItem : IItem
         }
     }
 
-    public bool ShouldShowRange() => false;
+    public void UpdateRangeDisplay(SpriteRenderer rangeDisplay)
+    {
+        rangeDisplay.gameObject.SetActive(false);
+    }
 
-    public bool IsTransparent() => true;
+    public bool IsTransparentWhenHeld() => true;
 
     protected abstract void PlantObject(PlayerState playerState, Vector3Int cell);
 

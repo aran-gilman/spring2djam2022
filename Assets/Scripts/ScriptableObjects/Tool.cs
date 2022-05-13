@@ -8,17 +8,47 @@ public abstract class Tool : ScriptableObject, IItem
     public class Upgrade
     {
         public int cost;
+        public int maxEffectRange;
     }
 
     public Sprite Sprite => sprite;
     public int purchaseCost;
+    public int initialEffectRange = 0;
     public List<Upgrade> upgrades = new List<Upgrade>();
 
     public abstract void Activate(PlayerState playerState);
 
-    public bool ShouldShowRange() => true;
+    public bool IsTransparentWhenHeld() => false;
 
-    public bool IsTransparent() => false;
+    public void UpdateRangeDisplay(SpriteRenderer rangeDisplay)
+    {
+        PlayerState.ToolInfo info = PlayerState.Get().GetToolInfo(this);
+        info.selectedRange = Mathf.Clamp(info.selectedRange, initialEffectRange, GetMaxEffectRange(info.level));
+
+        if (info.selectedRange > 0)
+        {
+            int diameter = info.selectedRange * 2 + 1;
+            rangeDisplay.size = new Vector2(diameter, diameter);
+            rangeDisplay.gameObject.SetActive(true);
+        }
+        else
+        {
+            rangeDisplay.gameObject.SetActive(false);
+        }
+    }
+
+    public int GetMaxEffectRange(int level)
+    {
+        if (level <= 0)
+        {
+            return initialEffectRange;
+        }
+        else if (level < upgrades.Count)
+        {
+            return upgrades[level - 1].maxEffectRange;
+        }
+        return upgrades[upgrades.Count - 1].maxEffectRange;
+    }
 
     protected IEnumerable<Vector3Int> GetCellsInRange(Vector3Int center, int range)
     {
