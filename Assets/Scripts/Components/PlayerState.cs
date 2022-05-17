@@ -108,7 +108,14 @@ public class PlayerState : MonoBehaviour
 
     private void OnUseItem()
     {
-        if (selectedItem != null)
+        if (selectedItem == null)
+        {
+            if(flowerState.PutInInventory(cursor.GetSelectedCell()))
+            {
+                audioSource.PlayOneShot(removeSound);
+            }
+        }
+        else
         {
             selectedItem.Activate(this);
         }
