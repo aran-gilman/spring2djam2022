@@ -12,6 +12,7 @@ public abstract class Tool : ScriptableObject, IItem
     }
 
     public Sprite Sprite => sprite;
+    public AudioClip activationSound;
     public int purchaseCost;
     public int initialEffectRange = 0;
     public List<Upgrade> upgrades = new List<Upgrade>();

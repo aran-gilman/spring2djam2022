@@ -8,10 +8,10 @@ public class WateringCan : Tool
     public override void Activate(PlayerState playerState)
     {
         PlayerState.ToolInfo toolInfo = playerState.GetToolInfo(this);
-
         foreach (Vector3Int cell in GetCellsInRange(playerState.cursor.GetSelectedCell(), toolInfo.selectedRange))
         {
             playerState.flowerState.Water(cell);
         }
+        playerState.audioSource.PlayOneShot(activationSound);
     }
 }

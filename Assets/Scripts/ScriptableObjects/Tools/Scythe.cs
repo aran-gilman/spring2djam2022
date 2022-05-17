@@ -28,5 +28,6 @@ public class Scythe : Tool
             }
             flowerState.SetFlower(cell, null, FlowerState.GrowthStage.NoFlower);
         }
+        playerState.audioSource.PlayOneShot(activationSound);
     }
 }

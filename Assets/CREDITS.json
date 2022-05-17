@@ -32,7 +32,7 @@
 		},
 		{
 			"type": "Sfx",
-			"file": "Audio/*.ogg (except gravel.ogg and mud02.gg)",
+			"file": "Audio/*.ogg (except for those specified in other entries)",
 			"authorLink": "www.kenney.nl",
 			"license": "CC0 (Public Domain)",
 			"link": "https://opengameart.org/content/interface-sounds"
@@ -43,6 +43,13 @@
 			"author": "TinyWorlds",
 			"license": "CC0",
 			"link": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud"
+		},
+		{
+			"type": "Sfx",
+			"file": "Audio/splash_01.ogg",
+			"author": "rubberduck",
+			"license": "CC0",
+			"link": "https://opengameart.org/content/40-cc0-water-splash-slime-sfx"
 		},
 		{
 			"type": "Font",

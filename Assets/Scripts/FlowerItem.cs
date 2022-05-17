@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class FlowerItem : PlantableItem
 {
-
     public override Sprite Sprite => Flower.flowerSprite;
 
     public FlowerItem(Flower flower) : base(flower)
