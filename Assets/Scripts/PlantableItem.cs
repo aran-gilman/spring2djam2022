@@ -24,7 +24,10 @@ public abstract class PlantableItem : IItem
         }
         else
         {
-            RemoveObject(playerState, cell);
+            if (playerState.flowerState.PutInInventory(cell))
+            {
+                playerState.audioSource.PlayOneShot(playerState.removeSound);
+            }
         }
     }
 
@@ -36,27 +39,4 @@ public abstract class PlantableItem : IItem
     public bool IsTransparentWhenHeld() => true;
 
     protected abstract void PlantObject(PlayerState playerState, Vector3Int cell);
-
-    private void RemoveObject(PlayerState playerState, Vector3Int cell)
-    {
-        FlowerState.GrowthStage stage = playerState.flowerState.GetInfo(cell).growthStage;
-        if (stage == FlowerState.GrowthStage.Sprout)
-        {
-            return;
-        }
-
-        PlayerState.FlowerInfo info = playerState.GetInventoryInfo(playerState.flowerState.flowerTilemap.GetTile<Flower>(cell));
-        if (stage == FlowerState.GrowthStage.Seed)
-        {
-            info.seedCount += 1;
-        }
-        else if (stage == FlowerState.GrowthStage.Flower)
-        {
-            info.flowerCount += 1;
-        }
-        info.isDiscovered = true;
-
-        playerState.audioSource.PlayOneShot(playerState.removeSound);
-        playerState.flowerState.SetFlower(cell, null, FlowerState.GrowthStage.NoFlower);
-    }
 }

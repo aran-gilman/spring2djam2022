@@ -28,6 +28,29 @@ public class FlowerState : MonoBehaviour
 
     public List<HybridRule> hybridRules = new List<HybridRule>();
 
+    // Returns whether something was actually removed from the map and put in the player's inventory
+    public bool PutInInventory(Vector3Int cell)
+    {
+        Flower flower = GetFlower(cell);
+        GrowthStage growthStage = GetInfo(cell).growthStage;
+        switch (growthStage)
+        {
+            case GrowthStage.NoFlower:
+            case GrowthStage.Sprout:
+                return false;
+
+            case GrowthStage.Seed:
+                playerState.GetInventoryInfo(flower).seedCount += 1;
+                break;
+
+            case GrowthStage.Flower:
+                playerState.GetInventoryInfo(flower).flowerCount += 1;
+                break;
+        }
+        SetFlower(cell, null, GrowthStage.NoFlower);
+        return true;
+    }
+
     public void Water(Vector3Int cell)
     {
         GetInfo(cell).isWatered = true;
