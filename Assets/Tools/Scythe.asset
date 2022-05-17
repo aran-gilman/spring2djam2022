@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82d16adbb83aaf44f8f8864f0c379c9e, type: 3}
   m_Name: Scythe
   m_EditorClassIdentifier: 
+  activationSound: {fileID: 8300000, guid: e9fbb75b26d650a469904b021b9a0c3e, type: 3}
   purchaseCost: 100
   initialEffectRange: 1
   upgrades:

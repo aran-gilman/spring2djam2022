@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a29169b5e89a74a8cbf01293b62b73, type: 3}
   m_Name: Watering Can
   m_EditorClassIdentifier: 
+  activationSound: {fileID: 8300000, guid: d10de82106789ce48a1bf1e2d43b2537, type: 3}
   purchaseCost: 0
   initialEffectRange: 0
   upgrades:
